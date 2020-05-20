@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700%7CMontserrat:300,400,600,700">
+
+    <link rel="stylesheet" href="/icons/fontawesome/css/fontawesome-all.min.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="/icons/Iconsmind__Ultimate_Pack/Line%20icons/styles.min.css">
+    <!-- iconsmind.com Icons -->
+    <!-- <script>
+    function validateForm(form) {
+
+        var y = document.forms["registration"]["password"].value;
+        var z = document.forms["registration"]["confirmpassword"].value;
+        
+        if (y == "") {
+				alert("Password must be filled out");
+				return false;
+			}
+		if (z == "") {
+				alert("confirm Password must be filled out");
+				return false;
+			}
+			if (y !== z) {
+				alert("password dont match");
+				return false;
+			}
+			if (y.length && z.length < 6) {
+				alert("password should be at least 6 characters")
+			}
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+
+
+    }
+</script> -->
+  <!-- Page Title Here -->
+  <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>
+        tribal play | media
+    </title>
+    <style>
+        /* Popup container - can be anything you want */
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+            visibility: hidden;
+            width: 160px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+        }
+
+        /* Popup arrow */
+        .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .errors {
+            color: rgb(241, 78, 78);
+            /* border: solid 1px red; */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header id="masthead-pro">
+        <div class="container">
+
+            <h1>
+                <a href="/">
+                    <img src="/images/logo.png" alt="Logo">
+                </a>
+            </h1>
+
+
+    </header>
+
+
+    <div id="content-pro">
+
+        <div class="container">
+            <div class="centered-headings-pro pricing-plans-headings">
+                <h1 style="align-content: center;">login</h1>
+            </div>
+        </div>
+        <!-- close .container -->
+
+
+        <div id="pricing-plans-background-image">
+            <div class="container">
+                <div class="registration-steps-page-container">
+
+                    <form name="registration" class="registration-steps-form" form role="form" action="/loginM"
+                        method="POST">
+
+                        <div class="registration-social-login-container">
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="username" class="col-form-label">UserName</label>
+                                        <input type="text" class="form-control" id="username" name="username"
+                                            placeholder="username">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="password" class="col-form-label">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Password">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="registration-social-login-or"></div>
+                            <% if (locals.errors) { %>
+                            <ul>
+                                <% Object.values(errors).forEach(function(error){ %>
+                                <li class="errors"><%= error %> !</li>
+                                <% }); %>
+                            </ul>
+                            <% } %>
+
+                        </div>
+                        <!-- close .registration-social-login-container -->
+                        <br />
+                        <div class="registration-social-login-options">
+                            <a href="/auth/facebook"></a>
+                            <div class="social-icon-login facebook-color">
+                                <i class="fab fa-facebook-f"></i> Facebook</div></a>
+                            <!-- <div class="social-icon-login twitter-color">
+                                <i class="fab fa-twitter"></i> Twitter</div> -->
+                            <a href="/auth/google">
+                                <div class="social-icon-login google-color">
+                            </a>
+                            <i class="fab fa-google-plus-g"></i> Google
+                        </div>
+                </div>
+                <!-- close .registration-social-login-options -->
+
+                <div class="clearfix"></div>
+                <div class="form-group last-form-group-continue popup">
+                    <span class="popuptext" id="myPopup">Successful</span>
+                    <button type="submit" value="submit" onclick="getOption()" class="btn btn-green-pro">login
+                    </button>
+                    <a href="/forgot" type="submit" class="btn btn-white-pro">forgot password</a>
+                    <!-- <span class="checkbox-remember-pro">
+                                <input type="checkbox" id="checkbox-terms">
+                                <label for="checkbox-terms" class="col-form-label">By clicking "Continue", you agree to our
+                                    <a href="#!">Terms of Use</a> and
+                                    <a href="#!">Privacy Policy</a> including the use of cookies.</label>
+                            </span> -->
+                    <div class="clearfix"></div>
+                </div>
+                </form>
+
+            </div>
+            <!-- close .registration-steps-page-container -->
+
+        </div>
+        <!-- close .container -->
+    </div>
+    <!-- close #pricing-plans-background-image -->
+
+    </div>
+    <!-- close #content-pro -->
+
+    <footer id="footer-pro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <a href="/faqs">
+                        <div class="copyright-text-pro">&copy; Copyright 2020 Tribal Play
+                    </a>.</div>
+            </div>
+            <!-- close .col -->
+            <div class="col-md">
+                <ul class="social-icons-pro">
+                    <li class="facebook-color">
+                        <a href="# " target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="twitter-color">
+                        <a href="#" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="youtube-color">
+                        <a href="# " target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li class="vimeo-color">
+                        <a href="# " target="_blank">
+                            <i class="fab fa-vimeo-v"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- close .col -->
+        </div>
+        <!-- close .row -->
+        </div>
+        <!-- close .container -->
+    </footer>
+
+    <a href="#0" id="pro-scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+
+
+    <!-- Required Framework JavaScript -->
+    <script src="js/libs/jquery-3.3.1.min.js"></script>
+    <!-- jQuery -->
+    <script src="js/libs/popper.min.js" defer></script>
+    <!-- Bootstrap Popper/Extras JS -->
+    <script src="js/libs/bootstrap.min.js" defer></script>
+    <!-- Bootstrap Main JS -->
+    <!-- All JavaScript in Footer -->
+
+    <!-- Additional Plugins and JavaScript -->
+    <script src="js/navigation.js" defer></script>
+    <!-- Header Navigation JS -->
+    <script src="js/jquery.flexslider-min.js" defer></script>
+    <!-- Custom Document Ready JS -->
+    <script src="js/script.js" defer></script>
+    <!-- Custom Document Ready JS -->
+
+</body>
+
+</html>

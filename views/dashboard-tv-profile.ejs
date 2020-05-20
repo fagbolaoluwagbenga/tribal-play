@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/swiper.css">
+	<link rel="stylesheet" href="/style.css">
+
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700%7CMontserrat:300,400,600,700">
+
+	<link rel="stylesheet" href="/icons/fontawesome/css/fontawesome-all.min.css"><!-- FontAwesome Icons -->
+	<link rel="stylesheet" href="/icons/Iconsmind__Ultimate_Pack/Line%20icons/styles.min.css">
+	<!-- iconsmind.com Icons -->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+  <!-- Page Title Here -->
+  <link rel="icon" href="img/favicon.png" type="image/png">
+	<title>
+		tribal play | media
+	</title>
+	<style>
+		#more {
+			display: none;
+			cursor: pointer;
+		}
+
+		.item-listing-text-skrn h6 {
+			font-family: monospace;
+			font-size: small;
+			/* font-weight: 100; */
+		}
+
+		#pos {
+			position: absolute;
+			top: 0;
+			left: 0;
+			line-height: 32px;
+			width: 32px;
+			text-align: center;
+			font-size: 11px;
+			font-family: Lato, sans-serif;
+			margin-bottom: -5px;
+			float: right;
+			position: relative;
+			color: #fff;
+			/* background: #3db13d; */
+		}
+
+		#header-user-notification-click i {
+			position: relative;
+			top: -1px;
+		}
+	</style>
+
+	<% include partials/header-logo %>
+	<% include partials/navigation-bar %>
+
+	<div id="content-sidebar-pro">
+
+		<div id="content-sidebar-image">
+			<img src="http://image.tmdb.org/t/p/original<%= data["backdrop_path"] %>" alt="Movie Poster">
+		</div>
+
+		<div class="content-sidebar-section">
+			<h2 class="content-sidebar-sub-header"><%= data["original_name"] %></h2>
+			<ul class="progression-studios-slider-rating">
+				<li>PG-13</li>
+				<li>HD</li>
+				<br>
+				<br>
+				<div>
+					<li>
+						<h6>seasons : <%= data["number_of_seasons"] %> | episodes: <%= data["number_of_episodes"] %>
+						</h6>
+					</li>
+				</div>
+			</ul>
+		</div><!-- close .content-sidebar-section -->
+
+		<div class="content-sidebar-section">
+			<h4 class="content-sidebar-sub-header">Release Date</h4>
+			<div class="content-sidebar-short-description"><%= data["first_air_date"] %></div>
+		</div><!-- close .content-sidebar-section -->
+
+		<div class="content-sidebar-section">
+			<h4 class="content-sidebar-sub-h
+				app.get(" /dashS", function(req, res) { res.render("dashboard-home.html"); });eader">Length</h4>
+			<div class="content-sidebar-short-description"><%= data["episode_run_time"] %> minutes</div>
+
+			<h4>Created by</h4>
+			<div><%= data["created_by"][0].name %> </div>
+		</div><!-- close .content-sidebar-section -->
+
+		<!-- <div class="content-sidebar-section">
+				<h4 class="content-sidebar-sub-header">Director</h4>
+				<div class="content-sidebar-short-description">James Wan</div>
+			</div>close .content-sidebar-section	 -->
+
+		<div class="content-sidebar-section">
+			<ul id="sidebar-reviews-pro">
+				<% data["production_companies"].forEach(function(company) { %>
+				<li>
+					<img src="http://image.tmdb.org/t/p/original<%= company["logo_path"] %>">
+					<br />
+					<div>
+						<h6 style="text-align: center">
+							<!-- <bold><%= company["name"] %></bold>-<%= company["origin_country"] %></h6> -->
+					</div>
+				</li>
+				<br />
+				<% }) %>
+			</ul>
+
+			<br />
+			<br />
+			<h5> featured networks</h5>
+		</div>
+		<div class="content-sidebar-section">
+			<ul id="sidebar-reviews-pro">
+				<% data["networks"].forEach(function(network) { %>
+				<li>
+					<img src="http://image.tmdb.org/t/p/original<%= network["logo_path"] %>">
+					<div>
+						<h6 style="text-align: left">
+							<!-- <bold><%= network["name"] %></bold> -->
+						</h6>
+					</div>
+				</li>
+				<% }) %>
+			</ul>
+		</div>
+
+		<div class="content-sidebar-section">
+			<h2 class="content-sidebar-sub-header adjusted-recent-reviews">Recent Reviews</h2>
+			<ul id="sidebar-reviews-pro">
+				<% data["reviews"]["results"].forEach(function(review) { %>
+				<li>
+					<h6><%= review["author"] %></h6>
+					<div class="sidebar-review-time">October 22, 2017</div>
+					<div class="spoiler-review">Contains Spoiler</div>
+					<p class="more"><span id="dots">...</span><span id="more"><%= review["content"] %></span></p>
+					<a style="color:#42b740; cursor: pointer;" onclick="myFunction()" id="myBtn" role="button">Read
+						more</a>
+				</li>
+				<% }) %>
+			</ul>
+			<button class="btn btn-green-pro btn-sm" data-toggle="modal" data-target="#postModal" role="button">post
+				review</button>
+		</div><!-- close .content-sidebar-section -->
+
+	</div><!-- close #content-sidebar-pro -->
+
+
+	<main id="col-main-with-sidebar">
+
+		<div id="movie-detail-header-pro" style="background-image:url('/images/demo/dashboard-movie-poster.jpg')">
+
+			<div class="progression-studios-slider-more-options">
+				<i class="fas fa-ellipsis-h"></i>
+				<ul>
+					<li><a href="#!">Add to Favorites</a></li>
+					<li><a href="#!">Add to Watchlist</a></li>
+					<li><a href="#!">Add to Playlist</a></li>
+					<li><a href="#!">Share...</a></li>
+					<li><a href="#!">Write A Review</a></li>
+				</ul>
+			</div>
+
+
+			<a class="movie-detail-header-play-btn afterglow" href=""><i class="fas fa-play"></i></a>
+
+			<video id="VideoLightbox-1" poster="" width="960" height="540">
+				<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.mp4" type="video/mp4">
+				<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.webm" type="video/webm">
+			</video>
+			<div id="movie-detail-header-media">
+				<div class="dashboard-container">
+					<h5>Media</h5>
+					<div class="row">
+
+						<% data["videos"]["results"].forEach(function(result) { %>
+						<div class="col-6 col-md-4 col-lg-4">
+							<a class="movie-detail-media-link afterglow" href="">
+								<div class="movie-detail-media-image">
+									<iframe src="https://www.youtube.com/embed/<%= result["key"]  %>" frameborder="0"
+										allow="accelerometer; picture-in-picture" allowfullscreen></iframe>
+									<!-- <span><i class="fas fa-play"></i></span> -->
+									<h6>Trailer</h6>
+								</div>
+							</a>
+						</div>
+						<% }) %>
+					</div><!-- close .row -->
+				</div><!-- close .dashboard-container -->
+			</div><!-- close #movie-detail-header-media -->
+
+			<div id="movie-detail-gradient-pro"></div>
+		</div><!-- close #movie-detail-header-pro -->
+
+		<div id="movie-detail-rating">
+			<div class="dashboard-container">
+				<div class="row">
+					<div class="col-sm">
+						<h5>rate <bold><%= data["original_title"] %></bold>
+						</h5>
+
+						<div class="rating-pro">
+							<label>
+								<input type="radio" name="rating-pro" value="10" title="10 stars"> 10
+							</label>
+							<label>
+								<input type="radio" name="rating-pro" value="9" title="9 stars"> 9
+							</label>
+							<label>
+								<input type="radio" name="rating-pro" value="8" title="8 stars"> 8
+							</label>
+							<label>
+								<input type="radio" name="rating-pro" value="7" title="7 stars"> 7
+							</label>
+							<label>
+								<input type="radio" name="rating-pro" value="6" title="6 stars"> 6
+							</label>
+							<label>
+								<input type="radio" name="rating-pro" value="5" title="5 stars"> 5
+							</label>
+							<label>
+								<input type="radio" name="rating-pro" value="4" title="4 stars"> 4
+							</label>
+							<label>
+								<input type="radio" name="rating-pro" value="3" title="3 stars"> 3
+							</label>
+							<label>
+								<input type="radio" name="rating-pro" value="2" title="2 stars"> 2
+							</label>
+							<label>
+								<input type="radio" name="rating-pro" value="1" title="1 star"> 1
+							</label>
+						</div>
+
+					</div>
+					<div class="col-sm">
+						<h6>User Rating</h6>
+
+						<div id="pos" class="circle-rating-pro" data-value="0.86" data-animation-start-value="0.86"
+							data-size="40" data-thickness="3" data-fill="{ &quot;color&quot;: &quot;#42b740&quot; }"
+							data-empty-fill="#def6de" data-reverse="true"><span
+								style="color:#42b740;"><%= data["vote_average"] %></span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div><!-- close .row -->
+			</div><!-- close .dashboard-container -->
+		</div><!-- close #movie-detail-rating -->
+
+		<div class="dashboard-container">
+
+
+			<div class="movie-details-section">
+				<h2>Storyline</h2>
+				<p><%= data["overview"] %></p>
+			</div><!-- close .movie-details-section -->
+
+			<div class="movie-details-section">
+				<h2>The Cast</h2>
+				<div class="row">
+					<% data["credits"]["cast"].forEach(function(cast) { %>
+					<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+						<div class="item-listing-container-skrn">
+							<a href="#!"><img src="http://image.tmdb.org/t/p/original<%= cast["profile_path"] %>"
+									alt="Movie Poster"></a>
+							<div class=" item-listing-text-skrn item-listing-movie-casting">
+								<h6><a href="#!"><%= cast["name"] %></a></h6>
+								<div class="movie-casting-sub-title"><%= cast["character"] %></div>
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+					<% }) %>
+				</div><!-- close .row -->
+			</div><!-- close .movie-details-section -->
+
+
+			<div class="movie-details-section">
+				<h2>Similar Movies | Recommendations</h2>
+				<div class="row">
+					<% data["recommendations"]["results"].forEach(function(movie) { %>
+					<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+						<div class="item-listing-container-skrn">
+							<a href="/dashboard/<%= movie["id"] %>">
+								<img src="http://image.tmdb.org/t/p/original<%= movie["poster_path"] %>" width="500"
+									height="707" alt="Listing">
+							</a>
+
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align">
+									<h6>
+										<a href="/dashboard/<%= movie["id"] %>">
+											<strong>
+												<!-- <%= movie["original_name"] %> -->
+											</strong>
+											<%= movie["first_air_date"] %>
+										</a>
+									</h6>
+									<div id="pos" class="circle-rating-pro" data-value="0.86"
+										data-animation-start-value="0.86" data-size="32" data-thickness="3" data-fill="{
+													&quot;color&quot;: &quot;#42b740&quot;
+												}" data-empty-fill="#def6de" data-reverse="true">
+										<span style="color:#42b740;"><%= movie["vote_average"] %></span>
+									</div>
+								</div>
+								<!-- close . item-listing-text-skrn-vertical-align -->
+							</div>
+							<!-- close . item-listing-text-skrn -->
+						</div>
+						<!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+
+
+					<% }) %>
+
+				</div>
+
+			</div><!-- close .movie-details-section -->
+		</div><!-- close .dashboard-container -->
+	</main>
+
+
+	</div><!-- close #sidebar-bg-->
+
+	<script>
+		function myFunction() {
+			var dots = document.getElementById("dots");
+			var moreText = document.getElementById("more");
+			var btnText = document.getElementById("myBtn");
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more";
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less";
+				moreText.style.display = "inline";
+			}
+		}
+	</script>
+
+	<% include partials/scripta %>
+
+	</body>
+
+</html>

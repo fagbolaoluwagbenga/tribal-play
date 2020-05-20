@@ -1,0 +1,129 @@
+<% include partials/head %>
+<% include partials/header %>
+<% include partials/navigation-bar %>
+
+
+<main id="col-main">
+			
+	<div class="dashboard-container">
+		
+		<ul class="dashboard-sub-menu">
+			<li><a href="/account/<%= user._id %>/edit">Account Settings</a></li>
+			<li class="current"><a href="/account-payment">Payment Info</a></li>
+		</ul><!-- close .dashboard-sub-menu -->
+		
+		<h5>Current Plan</h5>
+		
+		<div class="current-plan-account">
+			
+			<div class="row">
+				<% if(user.plan.toLowerCase() === "free" ){ %>
+				<div class="col-md">
+					<h4><%= user.plan.toUpperCase() %></h4>
+					<h2><sup>$</sup>0<span> / month</span></h2>
+
+                </div><!-- close .col-sm -->
+
+				<div class="col-md">
+					<h4>Plan Features:</h4>
+					<ul>
+						<li>HD Available</li>
+						<li>Watch on any Device</li>
+						<li>10 movies and shows</li>
+					</ul>
+				</div><!-- close .col-sm -->
+				<% } else if(user.plan.toLowerCase() === "basic"){ %>
+				<div class="col-md">
+					<h4><%= user.plan.toUpperCase() %></h4>
+					<h2><sup>$</sup>3<span> / month</span></h2>
+			<div class="current-plan-billing">You would be notified of your next monthly renewal</div>
+
+				</div><!-- close .col-sm -->
+				<div class="col-md">
+					<h4>Plan Features:</h4>
+					<ul>
+						<li>HD Available</li>
+						<li>Watch on 1 Device</li>
+						<li>90 movies and shows</li>
+					</ul>
+				</div><!-- close .col-sm -->
+				<% } else if(user.plan.toLowerCase() === "premium"){ %>
+				<div class="col-md">
+					<h4><%= user.plan.toUpperCase() %></h4>
+					<h2><sup>$</sup>7<span> / month</span></h2>
+			<div class="current-plan-billing">You would be notified of your next monthly renewal</div>
+				</div><!-- close .col-sm -->
+				<div class="col-md">
+					<h4>Plan Features:</h4>
+					<ul>
+						<li>HD Available</li>
+						<li>Watch on any Device</li>
+						<li>150 movies and shows</li>
+					</ul>
+				</div><!-- close .col-sm -->
+                <% } %>
+			</div>
+			
+			<div class="clearfix"></div>
+		</div><!-- close .current-plan-account -->
+		
+		<hr>
+		<h5>Payment Method</h5>
+		<div class="row payment-method-container">
+			<div class="col-md">
+				<div class="right-border-payment">
+				<p class="small-paragraph-spacing"><img src="images/demo/credit-card.jpg" alt="Credit Card"></p>
+				<p class="small-paragraph-spacing"><a href="https://tawk.to/chat/5d2dddc8bfcb827ab0cc0f50/default" class="btn">help</a></p>
+				<p><a href="https://tawk.to/chat/5d2dddc8bfcb827ab0cc0f50/default" class="btn"><i class="fas fa-minus"></i>Cancel Membership</a></p>
+				</div>
+			</div><!-- close .col -->
+			<div class="col-md">
+				<form name="plan" form role="form" action="/plan-updated?_method=PUT" method="POST">
+					<!-- <div class="col-sm"> -->
+						<div class="form-group">
+					<h6>change plan</h6>
+						  <!-- <label for="last-name" class="col-form-label">Country:</label> -->
+						  <div class="row">
+							  <div class="col-sm">
+						   <select name="plan" class="custom-select">
+							   <% plans.forEach(function(plan){ %>
+							   <option value="<%= plan.name %>"><%= plan.name %></option>
+							   <% }); %>
+						   </select>
+						</div>
+						   <!-- <div class="dotted-dividers-pro"></div> -->
+					   <div class="col-sm">
+						<button type="submit" name="submit" value="Submit"class="btn btn-green-pro">save</button>
+					   </div>
+					</div>
+					<!-- </div> -->
+					</div><!-- close .col -->	
+				</form>
+		</div><!-- close .row -->
+		
+		<hr>
+		
+		
+	</div><!-- close .dashboard-container -->
+</main>
+<!-- <p><a href="#!" class="btn">Cancel Membership</a></p>
+<br> -->
+
+</div><!-- close #sidebar-bg-->
+
+<% include partials/script %>
+<script type="text/javascript">
+	var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+	(function () {
+		var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+		s1.async = true;
+		s1.src = 'https://embed.tawk.to/5d2dddc8bfcb827ab0cc0f50/default';
+		s1.charset = 'UTF-8';
+		s1.setAttribute('crossorigin', '*');
+		s0.parentNode.insertBefore(s1, s0);
+	})();
+</script>
+
+</body>
+
+</html>

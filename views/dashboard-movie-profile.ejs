@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/swiper.css">
+		<link rel="stylesheet" href="/style.css">
+		 
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700%7CMontserrat:300,400,600,700">
+		
+		<link rel="stylesheet" href="/icons/fontawesome/css/fontawesome-all.min.css"><!-- FontAwesome Icons -->
+		<link rel="stylesheet" href="/icons/Iconsmind__Ultimate_Pack/Line%20icons/styles.min.css"><!-- iconsmind.com Icons -->
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+		  <!-- Page Title Here -->
+		  <link rel="icon" href="img/favicon.png" type="image/png">
+		        <title>
+            tribal play | media
+        </title>
+
+		<style>
+			#more {display: none;
+				cursor: pointer;
+			}
+			.item-listing-text-skrn h6 {
+			font-family: monospace;
+			font-size: small;
+			/* font-weight: 100; */
+			}	
+			#pos {
+			position: absolute;
+			top: 0;
+			left: 0;
+			line-height: 32px;
+			width: 32px;
+			text-align: center;
+			font-size: 11px;
+			font-family: Lato,sans-serif;
+			margin-bottom: -5px;
+			float: right;
+			position: relative;
+			color: #fff;
+			/* background: #3db13d; */
+			}
+			
+			#header-user-notification-click i {
+			position: relative;
+			top: -1px;}
+
+			
+		</style>
+		
+	</head>
+	<head>
+		<link rel="stylesheet" href="/style.css">
+	  
+	  </head>
+	  
+	  <body>
+		  <div id="sidebar-bg">
+			  
+		<header id="videohead-pro" class="sticky-header">
+			  <div id="video-logo-background"><a href="/dashboard"><img src="/images/logo-video-layout.png"></a>
+			  </div>
+			  <div id="video-search-header">
+				  <div id="search-icon-more"></div>
+				  <form action="results" method="GET" id="video-search-header-filtering-padding">
+			   
+			  
+			  <input type="text" placeholder="Search for Movies or TV Series" aria-label="Search" name="search">
+				  <div id="video-search-header-filtering">
+	  
+	  
+	  
+						  <div class="row">
+							  <div class="col-sm extra-padding">
+								  <h5>Type:</h5>
+								  
+								  <div class="row">
+									  <div class="col-sm">
+										  <label class="checkbox-pro-container">Movies
+											<input type="checkbox" checked="checked" id="movies-type">
+											<span class="checkmark-pro"></span>
+										  </label>
+								  
+										  <label class="checkbox-pro-container">TV Series
+											<input type="checkbox" id="tv-type">
+											<span class="checkmark-pro"></span>
+										  </label>
+									  </div><!-- close .col -->
+									  <div class="col">
+										  <label class="checkbox-pro-container">New Arrivals
+											<input type="checkbox" id="movie-type">
+											<span class="checkmark-pro"></span>
+										  </label>
+								  
+										  <label class="checkbox-pro-container">Documentary
+											<input type="checkbox" id="documentary-type">
+											<span class="checkmark-pro"></span>
+										  </label>
+									  </div><!-- close .col -->
+								  </div><!-- close .row -->
+								  
+								  <div class="dotted-dividers-pro"></div>
+							  </div><!-- close .col -->
+							  <div class="col-sm extra-padding">
+								  <h5>Genres:</h5>
+								  <select class="custom-select">
+									<option selected>All Genres</option>
+									<option value="1">Action</option>
+									<option value="2">Adventure</option>
+									<option value="3">Drama</option>
+									<option value="4">Animation</option>
+									<option value="5">Documentary</option>
+									<option value="6">Drama</option>
+									<option value="7">Horror</option>
+									<option value="8">Thriller</option>
+									<option value="9">Fantasy</option>
+									<option value="10">Romance</option>
+									<option value="11">Sci-Fi</option>
+									<option value="12">Western</option>
+								  </select>
+								  <div class="dotted-dividers-pro"></div>
+							  </div><!-- close .col -->
+								<div class="col-sm extra-padding">
+								  <h5>Country:</h5>
+								  <select class="custom-select">
+									<option value="Afganistan">Afghanistan</option>
+									<option value="Albania">Albania</option>
+									<option value="Algeria">Algeria</option>
+									<option value="American Samoa">American Samoa</option>
+									<option value="Andorra">Andorra</option>
+									<option value="Angola">Angola</option>
+									<option value="Anguilla">Anguilla</option>
+									<option value="Antigua & Barbuda">Antigua & Barbuda</option>
+									<option value="Argentina">Argentina</option>
+									<option value="Armenia">Armenia</option>
+									<option value="Aruba">Aruba</option>
+									<option value="Australia">Australia</option>
+									<option value="Austria">Austria</option>
+									<option value="Azerbaijan">Azerbaijan</option>
+									<option value="Bahamas">Bahamas</option>
+									<option value="Bahrain">Bahrain</option>
+									<option value="Bangladesh">Bangladesh</option>
+									<option value="Barbados">Barbados</option>
+									<option value="Belarus">Belarus</option>
+									<option value="Belgium">Belgium</option>
+									<option value="Belize">Belize</option>
+									<option value="Benin">Benin</option>
+									<option value="Bermuda">Bermuda</option>
+									<option value="Bhutan">Bhutan</option>
+									<option value="Bolivia">Bolivia</option>
+									<option value="Bonaire">Bonaire</option>
+									<option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+									<option value="Botswana">Botswana</option>
+									<option value="Brazil">Brazil</option>
+									<option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+									<option value="Brunei">Brunei</option>
+									<option value="Bulgaria">Bulgaria</option>
+									<option value="Burkina Faso">Burkina Faso</option>
+									<option value="Burundi">Burundi</option>
+									<option value="Cambodia">Cambodia</option>
+									<option value="Cameroon">Cameroon</option>
+									<option value="Canada">Canada</option>
+									<option value="Canary Islands">Canary Islands</option>
+									<option value="Cape Verde">Cape Verde</option>
+									<option value="Cayman Islands">Cayman Islands</option>
+									<option value="Central African Republic">Central African Republic</option>
+									<option value="Chad">Chad</option>
+									<option value="Channel Islands">Channel Islands</option>
+									<option value="Chile">Chile</option>
+									<option value="China">China</option>
+									<option value="Christmas Island">Christmas Island</option>
+									<option value="Cocos Island">Cocos Island</option>
+									<option value="Colombia">Colombia</option>
+									<option value="Comoros">Comoros</option>
+									<option value="Congo">Congo</option>
+									<option value="Cook Islands">Cook Islands</option>
+									<option value="Costa Rica">Costa Rica</option>
+									<option value="Cote DIvoire">Cote DIvoire</option>
+									<option value="Croatia">Croatia</option>
+									<option value="Cuba">Cuba</option>
+									<option value="Curaco">Curacao</option>
+									<option value="Cyprus">Cyprus</option>
+									<option value="Czech Republic">Czech Republic</option>
+									<option value="Denmark">Denmark</option>
+									<option value="Djibouti">Djibouti</option>
+									<option value="Dominica">Dominica</option>
+									<option value="Dominican Republic">Dominican Republic</option>
+									<option value="East Timor">East Timor</option>
+									<option value="Ecuador">Ecuador</option>
+									<option value="Egypt">Egypt</option>
+									<option value="El Salvador">El Salvador</option>
+									<option value="Equatorial Guinea">Equatorial Guinea</option>
+									<option value="Eritrea">Eritrea</option>
+									<option value="Estonia">Estonia</option>
+									<option value="Ethiopia">Ethiopia</option>
+									<option value="Falkland Islands">Falkland Islands</option>
+									<option value="Faroe Islands">Faroe Islands</option>
+									<option value="Fiji">Fiji</option>
+									<option value="Finland">Finland</option>
+									<option value="France">France</option>
+									<option value="French Guiana">French Guiana</option>
+									<option value="French Polynesia">French Polynesia</option>
+									<option value="French Southern Ter">French Southern Ter</option>
+									<option value="Gabon">Gabon</option>
+									<option value="Gambia">Gambia</option>
+									<option value="Georgia">Georgia</option>
+									<option value="Germany">Germany</option>
+									<option value="Ghana">Ghana</option>
+									<option value="Gibraltar">Gibraltar</option>
+									<option value="Great Britain">Great Britain</option>
+									<option value="Greece">Greece</option>
+									<option value="Greenland">Greenland</option>
+									<option value="Grenada">Grenada</option>
+									<option value="Guadeloupe">Guadeloupe</option>
+									<option value="Guam">Guam</option>
+									<option value="Guatemala">Guatemala</option>
+									<option value="Guinea">Guinea</option>
+									<option value="Guyana">Guyana</option>
+									<option value="Haiti">Haiti</option>
+									<option value="Hawaii">Hawaii</option>
+									<option value="Honduras">Honduras</option>
+									<option value="Hong Kong">Hong Kong</option>
+									<option value="Hungary">Hungary</option>
+									<option value="Iceland">Iceland</option>
+									<option value="Indonesia">Indonesia</option>
+									<option value="India">India</option>
+									<option value="Iran">Iran</option>
+									<option value="Iraq">Iraq</option>
+									<option value="Ireland">Ireland</option>
+									<option value="Isle of Man">Isle of Man</option>
+									<option value="Israel">Israel</option>
+									<option value="Italy">Italy</option>
+									<option value="Jamaica">Jamaica</option>
+									<option value="Japan">Japan</option>
+									<option value="Jordan">Jordan</option>
+									<option value="Kazakhstan">Kazakhstan</option>
+									<option value="Kenya">Kenya</option>
+									<option value="Kiribati">Kiribati</option>
+									<option value="Korea North">Korea North</option>
+									<option value="Korea Sout">Korea South</option>
+									<option value="Kuwait">Kuwait</option>
+									<option value="Kyrgyzstan">Kyrgyzstan</option>
+									<option value="Laos">Laos</option>
+									<option value="Latvia">Latvia</option>
+									<option value="Lebanon">Lebanon</option>
+									<option value="Lesotho">Lesotho</option>
+									<option value="Liberia">Liberia</option>
+									<option value="Libya">Libya</option>
+									<option value="Liechtenstein">Liechtenstein</option>
+									<option value="Lithuania">Lithuania</option>
+									<option value="Luxembourg">Luxembourg</option>
+									<option value="Macau">Macau</option>
+									<option value="Macedonia">Macedonia</option>
+									<option value="Madagascar">Madagascar</option>
+									<option value="Malaysia">Malaysia</option>
+									<option value="Malawi">Malawi</option>
+									<option value="Maldives">Maldives</option>
+									<option value="Mali">Mali</option>
+									<option value="Malta">Malta</option>
+									<option value="Marshall Islands">Marshall Islands</option>
+									<option value="Martinique">Martinique</option>
+									<option value="Mauritania">Mauritania</option>
+									<option value="Mauritius">Mauritius</option>
+									<option value="Mayotte">Mayotte</option>
+									<option value="Mexico">Mexico</option>
+									<option value="Midway Islands">Midway Islands</option>
+									<option value="Moldova">Moldova</option>
+									<option value="Monaco">Monaco</option>
+									<option value="Mongolia">Mongolia</option>
+									<option value="Montserrat">Montserrat</option>
+									<option value="Morocco">Morocco</option>
+									<option value="Mozambique">Mozambique</option>
+									<option value="Myanmar">Myanmar</option>
+									<option value="Nambia">Nambia</option>
+									<option value="Nauru">Nauru</option>
+									<option value="Nepal">Nepal</option>
+									<option value="Netherland Antilles">Netherland Antilles</option>
+									<option value="Netherlands">Netherlands (Holland, Europe)</option>
+									<option value="Nevis">Nevis</option>
+									<option value="New Caledonia">New Caledonia</option>
+									<option value="New Zealand">New Zealand</option>
+									<option value="Nicaragua">Nicaragua</option>
+									<option value="Niger">Niger</option>
+									<option value="Nigeria">Nigeria</option>
+									<option value="Niue">Niue</option>
+									<option value="Norfolk Island">Norfolk Island</option>
+									<option value="Norway">Norway</option>
+									<option value="Oman">Oman</option>
+									<option value="Pakistan">Pakistan</option>
+									<option value="Palau Island">Palau Island</option>
+									<option value="Palestine">Palestine</option>
+									<option value="Panama">Panama</option>
+									<option value="Papua New Guinea">Papua New Guinea</option>
+									<option value="Paraguay">Paraguay</option>
+									<option value="Peru">Peru</option>
+									<option value="Phillipines">Philippines</option>
+									<option value="Pitcairn Island">Pitcairn Island</option>
+									<option value="Poland">Poland</option>
+									<option value="Portugal">Portugal</option>
+									<option value="Puerto Rico">Puerto Rico</option>
+									<option value="Qatar">Qatar</option>
+									<option value="Republic of Montenegro">Republic of Montenegro</option>
+									<option value="Republic of Serbia">Republic of Serbia</option>
+									<option value="Reunion">Reunion</option>
+									<option value="Romania">Romania</option>
+									<option value="Russia">Russia</option>
+									<option value="Rwanda">Rwanda</option>
+									<option value="St Barthelemy">St Barthelemy</option>
+									<option value="St Eustatius">St Eustatius</option>
+									<option value="St Helena">St Helena</option>
+									<option value="St Kitts-Nevis">St Kitts-Nevis</option>
+									<option value="St Lucia">St Lucia</option>
+									<option value="St Maarten">St Maarten</option>
+									<option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+									<option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+									<option value="Saipan">Saipan</option>
+									<option value="Samoa">Samoa</option>
+									<option value="Samoa American">Samoa American</option>
+									<option value="San Marino">San Marino</option>
+									<option value="Sao Tome & Principe">Sao Tome & Principe</option>
+									<option value="Saudi Arabia">Saudi Arabia</option>
+									<option value="Senegal">Senegal</option>
+									<option value="Seychelles">Seychelles</option>
+									<option value="Sierra Leone">Sierra Leone</option>
+									<option value="Singapore">Singapore</option>
+									<option value="Slovakia">Slovakia</option>
+									<option value="Slovenia">Slovenia</option>
+									<option value="Solomon Islands">Solomon Islands</option>
+									<option value="Somalia">Somalia</option>
+									<option value="South Africa">South Africa</option>
+									<option value="Spain">Spain</option>
+									<option value="Sri Lanka">Sri Lanka</option>
+									<option value="Sudan">Sudan</option>
+									<option value="Suriname">Suriname</option>
+									<option value="Swaziland">Swaziland</option>
+									<option value="Sweden">Sweden</option>
+									<option value="Switzerland">Switzerland</option>
+									<option value="Syria">Syria</option>
+									<option value="Tahiti">Tahiti</option>
+									<option value="Taiwan">Taiwan</option>
+									<option value="Tajikistan">Tajikistan</option>
+									<option value="Tanzania">Tanzania</option>
+									<option value="Thailand">Thailand</option>
+									<option value="Togo">Togo</option>
+									<option value="Tokelau">Tokelau</option>
+									<option value="Tonga">Tonga</option>
+									<option value="Trinidad & Tobago">Trinidad & Tobago</option>
+									<option value="Tunisia">Tunisia</option>
+									<option value="Turkey">Turkey</option>
+									<option value="Turkmenistan">Turkmenistan</option>
+									<option value="Turks & Caicos Is">Turks & Caicos Is</option>
+									<option value="Tuvalu">Tuvalu</option>
+									<option value="Uganda">Uganda</option>
+									<option value="United Kingdom">United Kingdom</option>
+									<option value="Ukraine">Ukraine</option>
+									<option value="United Arab Erimates">United Arab Emirates</option>
+									<option value="United States of America">United States of America</option>
+									<option value="Uraguay">Uruguay</option>
+									<option value="Uzbekistan">Uzbekistan</option>
+									<option value="Vanuatu">Vanuatu</option>
+									<option value="Vatican City State">Vatican City State</option>
+									<option value="Venezuela">Venezuela</option>
+									<option value="Vietnam">Vietnam</option>
+									<option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+									<option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+									<option value="Wake Island">Wake Island</option>
+									<option value="Wallis & Futana Is">Wallis & Futana Is</option>
+									<option value="Yemen">Yemen</option>
+									<option value="Zaire">Zaire</option>
+									<option value="Zambia">Zambia</option>
+									<option value="Zimbabwe">Zimbabwe</option>    
+									 </select>
+								  <div class="dotted-dividers-pro"></div>
+							  </div><!-- close .col -->
+							  
+							  <div class="col-sm extra-padding extra-range-padding">
+								  <h5>Average Rating:</h5>
+							  <input class="range-example-rating-input" type="text" min="0" max="10" value="4,10" step="1" />
+								  <!-- JS is under /js/script.jss -->
+							  </div><!-- close .col -->
+						  </div><!-- close .row -->
+						  <div id="video-search-header-buttons">
+						  <button class="btn btn-green-pro" type="submit">Filter Search</button>
+							  <a href="#!" class="btn">Reset</a>
+						  </div><!-- close #video-search-header-buttons -->
+					  </form><!-- #video-search-header-filtering-padding -->
+				  </div><!-- close #video-search-header-filtering -->
+			  </div><!-- close .video-search-header -->
+			  <div id="mobile-bars-icon-pro" class="noselect"><i class="fas fa-bars"></i></div>
+			  <div id="header-user-profile">
+				  <div id="header-user-profile-click" class="noselect">
+					  <img src="../images/default.png" alt="">
+					  <div style="font-family: lato;" id="header-username"><%= user.username %></div><i class="fas fa-angle-down"></i>
+				  </div><!-- close #header-user-profile-click -->
+				  <div id="header-user-profile-menu">
+					  <ul>
+						  <li><a href="/profile"><span class="icon-User"></span>My Profile</a></li>
+						  <li><a href="/favorites"><span class="icon-Favorite-Window"></span>My Favorites</a></li>
+						  <li><a href="/account/<%= user._id%>/edit"><span class="icon-Gears"></span>Account Details</a></li>
+						   <li><a href="https://tawk.to/chat/5d2dddc8bfcb827ab0cc0f50/default" class="triggered icon-Life-Safer"><span class="icon-Life-Safer"></span>Help/Support</a></li>
+						  <li><a href="/"><span class="icon-Power-3"></span>Log Out</a></li>
+					  </ul>
+				  </div><!-- close #header-user-profile-menu -->
+			  </div><!-- close #header-user-profile -->
+			  
+			  <div id="header-user-notification">
+				  <div id="header-user-notification-click" class="noselect">
+					  <i class="far fa-bell"></i>
+					  <!-- <span class="user-notification-count">3</span> -->
+				  </div><!-- close #header-user-profile-click -->
+				  <div id="header-user-notification-menu">
+					  <h3>Notifications</h3>
+					  <!-- <div id="header-notification-menu-padding">
+							  <ul id="header-user-notification-list">
+								  <li><a href="#!"><img src="images/demo/user-profile-2.jpg" alt="Profile">Lorem ipsum dolor sit amet, consec tetur adipiscing elit. <div class="header-user-notify-time">21 hours ago</div></a></li>
+								  <li><a href="#!"><img src="images/demo/user-profile-3.jpg" alt="Profile">Donec vitae lacus id arcu molestie mollis. <div class="header-user-notify-time">3 days ago</div></a></li>
+								  <li><a href="#!"><img src="images/demo/user-profile-4.jpg" alt="Profile">Aenean vitae lectus non purus facilisis imperdiet. <div class="header-user-notify-time">5 days ago</div></a></li>
+							  </ul>
+							  <div class="clearfix"></div>
+						  </div> -->
+						  <!-- close #header-user-profile-menu -->
+					  </div>
+			  </div><!-- close #header-user-notification -->
+			  <div class="clearfix"></div>
+				  
+			  <nav id="mobile-navigation-pro">
+			  
+				  <ul id="mobile-menu-pro">
+				  <li class="current-menu-item">
+					<a href="/dashboard">
+						  <span class="icon-Old-TV"></span>
+					  TV Series
+					</a>
+				  <li>
+				  <li>
+					<a href="/dashboard-movies">
+						  <span class="icon-Reel"></span>
+					  Movies
+					</a>
+				  </li>
+				  <li>
+					<a href="/movieThrill">
+						  <span class="icon-Movie"></span>
+				   Movie Thrills
+					</a>
+				  </li>
+				  <li>
+					<a href="/newMovie">
+						  <span class="icon-Movie-Ticket"></span>
+					  New Arrivals
+					</a>
+				  </li>
+				  <li>
+					<a href="/trailers">
+						  <span class="icon-Clock"></span>
+					  Coming Soon
+					</a>
+				  </li>
+				  <li>
+					<a href="#!">
+						  <i class="far fa-bell"></i>
+						  <span class="user-notification-count">3</span>
+					  Notifications
+					</a>
+				  </li>
+				  </ul>
+				  <div class="clearfix"></div>
+				  
+				  <div id="search-mobile-nav-pro">
+					  <input type="text" placeholder="Search for Movies or TV Series" name="Search" aria-label="Search">
+				  </div>
+				  
+			  </nav>
+			  
+		</header>
+	  <% include partials/navigation-bar %>
+
+		<div id="content-sidebar-pro">
+			
+			<div id="content-sidebar-image">
+				<img src="http://image.tmdb.org/t/p/original<%= data["backdrop_path"] %>" alt="Movie Poster">
+			</div>
+			
+			<div class="content-sidebar-section">
+				<h2 class="content-sidebar-sub-header"><%= data["original_title"] %></h2>
+				<ul class="progression-studios-slider-rating">
+					<li>PG-13</li><li>HD</li>
+				</ul>
+			</div><!-- close .content-sidebar-section -->
+			
+			<div class="content-sidebar-section">
+				<h4 class="content-sidebar-sub-header">Release Date</h4>
+				<div class="content-sidebar-short-description"><%= data["release_date"] %></div>
+			</div><!-- close .content-sidebar-section -->
+			
+			<div class="content-sidebar-section">
+				<h4 class="content-sidebar-sub-h
+				app.get("/dashS", function(req, res) { res.render("dashboard-home.html");});eader">Length</h4>
+				<div class="content-sidebar-short-description"><%= data["runtime"] %> minutes</div>
+			</div><!-- close .content-sidebar-section -->
+
+			<!-- <div class="content-sidebar-section">
+				<h4 class="content-sidebar-sub-header">Director</h4>
+				<div class="content-sidebar-short-description">James Wan</div>
+			</div>close .content-sidebar-section	 -->
+			
+			<div class="content-sidebar-section">
+				<ul id="sidebar-reviews-pro">
+						<% data["production_companies"].forEach(function(company) { %>
+					<li>
+						<img src="http://image.tmdb.org/t/p/original<%= company["logo_path"] %>">
+						<br />
+						<br>
+						<div><h6 style="text-align: center"><bold><%= company["name"] %></bold>-<%= company["origin_country"] %></h6></div>
+					</li>
+					<br />
+					<% }) %>
+				</ul>
+
+				<br />
+				<br />
+				<h5> featured countries</h5>
+			</div>
+			<div class="content-sidebar-section"> 
+					<ul id="sidebar-reviews-pro">
+							<% data["production_countries"].forEach(function(country) { %>
+								<li><div><h6 style="text-align: left"><bold><%= country["name"] %></bold></h6></div></li>
+								<% }) %>
+					</ul>
+			</div>
+			
+			<div class="content-sidebar-section">
+				<h2 class="content-sidebar-sub-header adjusted-recent-reviews">Recent Reviews</h2>
+				<ul id="sidebar-reviews-pro">
+				<% data["reviews"]["results"].forEach(function(review) { %>
+					<li>
+						<h6><%= review["author"] %></h6>
+						<div class="sidebar-review-time">October 22, 2017</div>
+						<div class="spoiler-review">Contains Spoiler</div>
+						<p class="more"><span id="dots">...</span><span id="more"><%= review["content"] %></span></p>
+						<a  style="color:#42b740; cursor: pointer;"  onclick="myFunction()" id="myBtn" role="button">Read more</a>
+					</li>
+					<% }) %>
+				</ul>
+				<button class="btn btn-green-pro btn-sm" data-toggle="modal" data-target="#postModal" role="button">post review</button>
+			</div><!-- close .content-sidebar-section -->
+
+
+			<!-- Modal -->
+		<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModal" aria-hidden="true">
+				<button type="button" class="close float-close-pro" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+			 </button>
+			 <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+				 <div class="modal-content">
+					<div class="modal-header-pro">
+						<h2>post your review</h2>
+					</div>
+							<form action="#" method="POST">
+								<div class="form-group">
+									<input type="text" class="form-control" id="author" name="author" placeholder="author">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="content" name="content" placeholder="content">
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-green-pro btn-display-block">post</button>
+								</div>				
+							</form>
+				 </div><!-- close .modal-content -->
+			 </div><!-- close .modal-dialog -->
+		 </div><!-- close .modal -->
+			
+		</div><!-- close #content-sidebar-pro -->
+		
+		
+		<main id="col-main-with-sidebar">
+			
+			<div id="movie-detail-header-pro" style="background-image:url('/images/demo/dashboard-movie-poster.jpg')">
+				
+				<div class="progression-studios-slider-more-options">
+					<i class="fas fa-ellipsis-h"></i>
+					<ul>
+						<li><a href="#!">Add to Favorites</a></li>
+						<li><a href="#!">Add to Watchlist</a></li>
+						<li><a href="#!">Add to Playlist</a></li>
+						<li><a href="#!">Share...</a></li>
+						<li><a href="#!">Write A Review</a></li>
+					</ul>
+				</div>+
+		
+				
+				<a class="movie-detail-header-play-btn afterglow" href=""><i class="fas fa-play"></i></a>
+	         <video id="VideoLightbox-1"  poster="" width="960" height="540">
+	             <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.mp4" type="video/mp4">
+	             <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.webm" type="video/webm">
+					 </video>
+					 
+
+				
+				<div id="movie-detail-header-media">
+					<div class="dashboard-container">
+						<h5>Media</h5>						
+						<div class="row">
+
+										<!-- Slider main container -->
+										<div class="swiper-container">
+											<!-- Additional required wrapper -->
+											<div class="swiper-wrapper">
+													<!-- Slides -->
+													<div class="swiper-slide">
+															<% data["videos"]["results"].forEach(function(video) { %>	
+																<div class="col-6 col-md-4 col-lg-4">
+																	<div class="movie-detail-media-link afterglow">
+																			<div class="movie-detail-media-image">
+																				<iframe src="https://www.youtube.com/embed/<%= video["key"] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+																	</div>
+																</div>
+														</div>	
+													<% }) %>	
+													</div>
+											</div>
+											<!-- If we need pagination -->
+											<div class="swiper-pagination"></div>
+
+											<!-- If we need navigation buttons -->
+											<div class="swiper-button-prev"></div>
+											<div class="swiper-button-next"></div>
+
+											<!-- If we need scrollbar -->
+											<!-- <div class="swiper-scrollbar"></div> -->
+										</div>
+ 
+<!--							<% data["videos"]["results"].forEach(function(video) { %>	
+									<div class="col-6 col-md-4 col-lg-4">
+										<div class="movie-detail-media-link afterglow">
+												<div class="movie-detail-media-image">
+													<iframe src="https://www.youtube.com/embed/<%= video["key"] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</div>
+									</div>
+							</div>	
+						<% }) %> -->
+					
+
+						</div><!-- close .row -->
+					</div><!-- close .dashboard-container -->
+				</div><!-- close #movie-detail-header-media -->	
+				<div id="movie-detail-gradient-pro"></div>
+			</div><!-- close #movie-detail-header-pro -->
+
+			
+			<div id="movie-detail-rating">
+				<div class="dashboard-container">
+					<div class="row">
+						<div class="col-sm">
+							<h5>rate <bold><%= data["original_title"] %></bold></h5>
+							
+							<div class="rating-pro">
+   							  <label>
+   							    <input type="radio" name="rating-pro" value="10" title="10 stars"> 10
+   							  </label>
+  							  <label>
+  							    <input type="radio" name="rating-pro" value="9" title="9 stars"> 9
+  							  </label>
+  							  <label>
+  							    <input type="radio" name="rating-pro" value="8" title="8 stars"> 8
+  							  </label>
+  							  <label>
+  							    <input type="radio" name="rating-pro" value="7" title="7 stars"> 7
+  							  </label>
+ 							  <label>
+ 							    <input type="radio" name="rating-pro" value="6" title="6 stars"> 6
+ 							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="5" title="5 stars"> 5
+							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="4" title="4 stars"> 4
+							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="3" title="3 stars"> 3
+							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="2" title="2 stars">2
+							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="1" title="1 star"> 1
+							  </label>
+							</div>
+							
+						</div>
+						<div class="col-sm">
+							<h6>User Rating</h6>
+							<div id="pos" style="font-size: 12;">
+								<% if(data["vote_average"] >= "5.0" ) { %>
+								 <span style="color:#42b740;"><%= data["vote_average"] %></span>								
+								<% } else if(data["vote_average"] < "5.0" ) { %>
+								<span style="color:#ff4141;"><%= data["vote_average"] %></span>
+								<% } %>
+							</div>
+				<div class="clearfix"></div>
+						</div>
+					</div><!-- close .row -->
+				</div><!-- close .dashboard-container -->
+			</div><!-- close #movie-detail-rating -->
+			
+			<div class="dashboard-container">
+				
+				
+				<div class="movie-details-section">
+					<h2>Storyline</h2>
+					<p><%= data["overview"] %></p>
+				</div><!-- close .movie-details-section -->
+
+				<div class="movie-details-section">
+					<h2>The Cast</h2>
+					<div class="row">
+							<% data["credits"]["cast"].forEach(function(cast) { %>
+						<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+							<div class="item-listing-container-skrn">
+								<a href="#!"><img src="http://image.tmdb.org/t/p/original<%= cast["profile_path"] %>" alt="<%= cast["name"] %>"></a>
+								<div class="item-listing-text-skrn item-listing-movie-casting">
+									<h6><a href="#!"><%= cast["name"] %></a></h6>
+									<div class="movie-casting-sub-title"><%= cast["character"] %></div>
+								</div><!-- close .item-listing-text-skrn -->
+							</div><!-- close .item-listing-container-skrn -->
+						</div><!-- close .col -->
+						<% }) %>
+					</div><!-- close .row -->
+				</div><!-- close .movie-details-section -->
+
+
+
+				<div class="movie-details-section">
+					<h2>Similar Movies | Recommendations</h2>
+					<div class="row">
+						<% data["recommendations"]["results"].forEach(function(movie) { %>
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+							<div class="item-listing-container-skrn">
+								<a href="/trailers/<%= movie["id"] %>">
+										<img src="http://image.tmdb.org/t/p/original<%= movie["poster_path"] %>"width="500" height="707" alt="Listing"> 
+								</a>
+	
+								<div style="font-family: monospace" class="item-listing-text-skrn">
+									<div class="item-listing-text-skrn-vertical-align">
+										<h6>
+											<a href="/trailers/<%= movie["id"] %>">
+												<!-- <strong>	<%= movie["title"] %>	</strong>- -->
+												<%= movie["release_date"] %>
+											</a>
+										</h6>
+										<div id="pos" class="circle-rating-pro" data-value="0.86" data-animation-start-value="0.86" data-size="30" data-thickness="2" data-fill="{ &quot;color&quot;: &quot;#42b740&quot;}" data-empty-fill="#def6de" data-reverse="true" style="padding-right:10px; font-size: 10px,">
+											<% if(movie["vote_average"] >= "5.0" ) { %>
+											 <span style="color:#42b740;"><%= movie["vote_average"] %></span>								
+											<% } else if(movie["vote_average"] < "5.0" ) { %>
+											<span style="color:#ff4141;"><%= movie["vote_average"] %></span>
+											<% } %>
+										</div>
+									</div>
+									<!-- close .item-listing-text-skrn-vertical-align -->
+								</div>
+								<!-- close .item-listing-text-skrn -->
+							</div>
+							<!-- close .item-listing-container-skrn -->
+						</div><!-- close .col -->
+	
+	
+						<% }) %>	
+							
+					</div>
+	
+				</div><!-- close .movie-details-section -->
+				
+			</div><!-- close .dashboard-container -->
+		</main>
+
+	
+		</div><!-- close #sidebar-bg-->	
+		<!-- Required Framework JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
+
+		<script src="https://cdn.plyr.io/3.4.7/plyr.js"></script>
+		<script src="https://cdn.plyr.io/3.4.7/plyr.polyfilled.js"></script>
+
+		<% include partials/scripta %>		
+		<script>
+
+   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, options);
+    });
+
+  // Or with jQuery
+
+
+				var swiper = new Swiper('.swiper-container', {
+					slidesPerView: 1,
+					spaceBetween: 1500,
+					slidesPerGroup: 1,
+					loop: true,
+					loopFillGroupWithBlank: true,
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+					},
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+				});
+
+	function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+			</script>
+	</body>
+</html>

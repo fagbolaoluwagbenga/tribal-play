@@ -1,0 +1,452 @@
+<% include partials/head %>
+<% include partials/header %>
+<% include partials/navigation-bar %>
+
+		<div id="content-sidebar-pro">
+			
+			<div id="content-sidebar-image">
+				<img src="/<%= seriesMovie.image_path %>" alt="Movie Poster">
+			</div>
+			
+			<div class="content-sidebar-section">
+				<h2 class="content-sidebar-sub-header"><%= seriesMovie.title %></h2>
+				<ul class="progression-studios-slider-rating">
+					<li>PG-13</li><li>HD</li>
+				</ul>
+			</div><!-- close .content-sidebar-section -->
+			
+			<div class="content-sidebar-section">
+				<h4 class="content-sidebar-sub-header">Release Date</h4>
+				<div class="content-sidebar-short-description"><%= seriesMovie.release_date %></div>
+			</div><!-- close .content-sidebar-section -->
+			
+			<div class="content-sidebar-section">
+				<h4 class="content-sidebar-sub-header">Length</h4>
+				<div class="content-sidebar-short-description"><%= seriesMovie.runtime %> min</div>
+			</div><!-- close .content-sidebar-section -->
+			
+			<div class="content-sidebar-section">
+				<h4 class="content-sidebar-sub-header">Director</h4>
+				<div class="content-sidebar-short-description"><%= seriesMovie.director %></div>
+				<div class="content-sidebar-short-description"> </div>
+			</div><!-- close .content-sidebar-section -->
+
+			<div class="content-sidebar-section">
+				<h2 class="content-sidebar-sub-header adjusted-recent-reviews">Recent Reviews</h2>
+				<ul id="sidebar-reviews-pro">
+					<% seriesMovie.posts.forEach(function(post) { %>
+						<h6 style="color: #42b740"><%= post.author.username %></h6>
+						<div class="sidebar-review-time"><%= post.date.toDateString() %></div>
+						<div style="color: #ff4141" class="spoiler-review">Contains Spoiler</div>
+						<p class="more"><span id="more"><%= post.content %></span></p>
+					</li>					
+				  <% }) %>
+				</ul>
+				<button class="btn btn-green-pro btn-sm" data-toggle="modal" data-target="#postModal" role="button">post review</button>
+			</div><!-- close .content-sidebar-section -->
+		
+
+			<!-- <button class="btn btn-green-pro btn-sm" data-toggle="modal" data-target="#postModal" role="button">post review</button> -->
+<!-- post review shit missing -->
+			
+						<!-- Modal -->
+		<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModal" aria-hidden="true">
+			<button type="button" class="close float-close-pro" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+		 </button>
+		 <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+			 <div class="modal-content">
+				<div class="modal-header-pro">
+					<h2>post your review</h2>
+				</div>
+						<form action="/seriesMovie/<%= seriesMovie._id %>/posts" method="POST">
+							<!-- <div class="form-group">
+								<input type="text" class="form-control" id="author" name="post[author]" placeholder="author">
+							</div> -->
+							<div class="form-group">
+								<input type="text" class="form-control" id="content" name="post[content]" placeholder="content">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-green-pro btn-display-block">post</button>
+							</div>				
+						</form>
+			 </div><!-- close .modal-content -->
+		 </div><!-- close .modal-dialog -->
+	 </div><!-- close .modal -->
+		
+	</div><!-- close #content-sidebar-pro -->
+		</div><!-- close #content-sidebar-pro -->
+		
+		
+		<main id="col-main-with-sidebar">
+			
+			<!-- <div id="movie-detail-header-pro" style="background-image:url('/<%= seriesMovie.image_path %>')"> -->
+				<div id="movie-detail-header-pro" style="background-image:url('/images/demo/dashboard-movie-poster.jpg')">
+				<div class="progression-studios-slider-more-options">
+					<i class="fas fa-ellipsis-h"></i>
+					<ul>
+						<li><a href="#!">Add to Favorites</a></li>
+						<li><a href="#!">Add to Watchlist</a></li>
+						<li><a href="#!">Add to Playlist</a></li>
+						<li><a href="#!">Share...</a></li>
+						<li><a href="#!">Write A Review</a></li>
+					</ul>
+				</div>
+				
+				<a class="movie-detail-header-play-btn afterglow" href="#player"><i class="fas fa-play"></i></a>
+				
+	         <video controls crossorigin playsinline id="player" playsinline controls poster="/<%= seriesMovie.image_path %>" width="960" height="540">
+				<% if(user.plan.toLowerCase() === "free" ){ %>	
+				
+						<% if( seriesMovie.category === "free" ){ %>
+						<source src="https://cdn.tribalplay.io/movies-video/free/<%= seriesMovie.video_path %>" type="video/mp4">
+						<source src="https://cdn.tribalplay.io/movies-video/free/<%= seriesMovie.video_path %>" type="video/webm">
+						<% } else{ %>	
+						prompt("<h3>not for you</h3>");
+						<% } %>	
+
+				<% } else if(user.plan.toLowerCase() === "basic"){ %>
+
+						<% if( seriesMovie.category === "free" ){ %>
+						<source src="https://cdn.tribalplay.io/movies-video/free/<%= seriesMovie.video_path %>" type="video/mp4">
+						<source src="https://cdn.tribalplay.io/movies-video/free/<%= seriesMovie.video_path %>" type="video/webm">
+		
+						<% } else if(seriesMovie.category === "basic"){ %>
+						<source src="https://cdn.tribalplay.io/movies-video/basic/<%= seriesMovie.video_path %>" type="video/mp4">
+						<source src="https://cdn.tribalplay.io/movies-video/basic/<%= seriesMovie.video_path %>" type="video/webm">
+						<% } else{ %>	
+						prompt("<h3>not for you</h3>");
+						<% } %>	
+		
+		
+				<% } else if(user.plan.toLowerCase() === "premium"){ %>
+
+						<% if(seriesMovie.category === "free" ){ %>
+						<source src="https://cdn.tribalplay.io/movies-video/free/<%= seriesMovie.video_path %>" type="video/mp4">
+					    <source src="https://cdn.tribalplay.io/movies-video/free/<%= seriesMovie.video_path %>" type="video/webm">
+	
+					   <% } else if(seriesMovie.category === "basic"){ %>
+					   <source src="https://cdn.tribalplay.io/movies-video/basic/<%= seriesMovie.video_path %>" type="video/mp4">
+					   <source src="https://cdn.tribalplay.io/movies-video/basic/<%= seriesMovie.video_path %>" type="video/webm">
+						
+					   <% } else if(seriesMovie.category === "premium"){ %>	
+						<source src="https://cdn.tribalplay.io/movies-video/premium/<%= seriesMovie.video_path %>" type="video/mp4">
+						<source src="https://cdn.tribalplay.io/movies-video/premium/<%= seriesMovie.video_path %>" type="video/webm">
+						<% } %>	
+	
+				<% } %>
+			<!-- Caption files -->
+			<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+			default>
+			<track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
+			<track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+			<!-- Fallback for browsers that don't support the <video> element -->
+			<a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
+
+	         </video>
+				
+		
+				<div id="movie-detail-header-media">
+					<div class="dashboard-container">
+						<h5>Media</h5>						
+						<div class="row">
+							<div class="col-6 col-md-4 col-lg-4">
+								<a class="movie-detail-media-link afterglow" href="#">
+									<div class="movie-detail-media-image">
+										<img src="/images/demo/holly-mandarich-236721-unsplash.jpg">
+										<span><i class="fas fa-play"></i></span>
+										<h6>Trailer</h6>
+									</div>
+								</a>
+							</div>
+							<div class="col-6 col-md-4 col-lg-4">
+								<a class="movie-detail-media-link afterglow" href="#">
+									<div class="movie-detail-media-image">
+										<img src="/images/demo/jonathan-pendleton-6555-unsplash.jpg">
+										<span><i class="fas fa-play"></i></span>
+										<h6>Interview</h6>
+									</div>
+								</a>
+							</div>
+							<div class="col-6 col-md-4 col-lg-4">
+								<a class="movie-detail-media-link" href="#">
+									<div class="movie-detail-media-image">
+										<img src="/images/demo/zachary-shea-577599-unsplash.jpg">
+										<span><i class="fas fa-play"></i></span>
+										<h6>Movie Stills</h6>
+									</div>
+								</a>
+							</div>
+						</div><!-- close .row -->
+					</div><!-- close .dashboard-container -->
+				</div><!-- close #movie-detail-header-media -->
+				
+				<div id="movie-detail-gradient-pro"></div>
+			</div><!-- close #movie-detail-header-pro -->
+			
+			
+			<div id="movie-detail-rating">
+				<div class="dashboard-container">
+					<div class="row">
+						<div class="col-sm">
+							<h5><%= seriesMovie.title %></h5>
+							
+							<div class="rating-pro">
+   							  <label>
+   							    <input type="radio" name="rating-pro" value="10" title="10 stars"> 10
+   							  </label>
+  							  <label>
+  							    <input type="radio" name="rating-pro" value="9" title="9 stars"> 9
+  							  </label>
+  							  <label>
+  							    <input type="radio" name="rating-pro" value="8" title="8 stars"> 8
+  							  </label>
+  							  <label>
+  							    <input type="radio" name="rating-pro" value="7" title="7 stars"> 7
+  							  </label>
+ 							  <label>
+ 							    <input type="radio" name="rating-pro" value="6" title="6 stars"> 6
+ 							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="5" title="5 stars"> 5
+							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="4" title="4 stars"> 4
+							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="3" title="3 stars"> 3
+							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="2" title="2 stars"> 2
+							  </label>
+							  <label>
+							    <input type="radio" name="rating-pro" value="1" title="1 star"> 1
+							  </label>
+							</div>
+							
+						</div>
+						<div class="col-sm">
+							<h6>User Rating</h6>
+					      <div
+					        class="circle-rating-pro"
+					        data-value="0.86"
+					        data-animation-start-value="0.86"
+					        data-size="35"
+					        data-thickness="2"
+					        data-fill="{
+					          &quot;color&quot;: &quot;#42b740&quot;
+					        }"
+					        data-empty-fill="#def6de"
+					        data-reverse="true"
+					      ><span style="color:#42b740;"><%= seriesMovie.vote_average %></span></div>
+							<div class="clearfix"></div>
+						</div>
+					</div><!-- close .row -->
+				</div><!-- close .dashboard-container -->
+			</div><!-- close #movie-detail-rating -->
+			
+			<div class="dashboard-container">
+	                <div class="movie-details-section">
+                            <h2>Storyline</h2>
+                            <p><%= seriesMovie.overview %></p>
+                        </div><!-- close .movie-details-section -->			
+				
+				<div class="movie-details-section">
+					<h2>Seasons</h2>
+                    <div class="row">
+						<% seriesMovie.tvSeasons.forEach(function(tvSeason){ %>
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<a class="movie-detail-media-link afterglow" href="/seriesMovie/season/<%= tvSeason._id %>/episodes">
+									<div class="movie-detail-media-image">
+										<img src="https://cdn.tribalplay.io/series-image/<%= tvSeason.image_path %>">
+										<span><i class="fas fa-play"></i></span>
+										<h6> season <%= tvSeason.season_number %> </h6>
+									</div>
+								</a>
+						 </div>   
+						<% }) %>
+					</div>
+				</div><!-- close .movie-details-section -->
+
+				<div class="movie-details-section">
+					<h2>The Cast</h2>
+						<div class="row">
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="item-listing-container-skrn">
+									<a href="#!"><img src="/images/demo/listing-8.jpg" alt="Cast"></a>
+									<div class=" item-listing-text-skrn item-listing-movie-casting">
+										<h6><a href="#!">Robert Downey Jr.</a></h6>
+										<div class="movie-casting-sub-title">Cleff Stark</div>
+									</div><!-- close . item-listing-text-skrn -->
+								</div><!-- close .item-listing-container-skrn -->
+							</div><!-- close .col -->
+							
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="item-listing-container-skrn">
+									<a href="#!"><img src="/images/demo/listing-9.jpg" alt="Cast"></a>
+									<div class=" item-listing-text-skrn item-listing-movie-casting">
+										<h6><a href="#!">Scarlett Johansson</a></h6>
+										<div class="movie-casting-sub-title">Black Downie</div>
+									</div><!-- close . item-listing-text-skrn -->
+								</div><!-- close .item-listing-container-skrn -->
+							</div><!-- close .col -->
+							
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="item-listing-container-skrn">
+									<a href="#!"><img src="/images/demo/listing-2.jpg" alt="Cast"></a>
+									<div class=" item-listing-text-skrn item-listing-movie-casting">
+										<h6><a href="#!">Chris Hemsworth</a></h6>
+										<div class="movie-casting-sub-title">Tony Henry</div>
+									</div><!-- close . item-listing-text-skrn -->
+								</div><!-- close .item-listing-container-skrn -->
+							</div><!-- close .col -->
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="item-listing-container-skrn">
+									<a href="#!"><img src="/images/demo/listing-6.jpg" alt="Cast"></a>
+									<div class=" item-listing-text-skrn item-listing-movie-casting">
+										<h6><a href="#!">Chris Hemsworth
+											Thor</a></h6>
+										<div class="movie-casting-sub-title">jane Fisher</div>
+									</div><!-- close . item-listing-text-skrn -->
+								</div><!-- close .item-listing-container-skrn -->
+							</div><!-- close .col -->
+							
+						</div><!-- close .row -->
+					</div><!-- close .movie-details-section -->
+					</div><!-- close .movie-details-section -->
+
+					
+				<div class="movie-details-section">
+					<h2>Similar Movies</h2>
+					<div class="row">
+						<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+							<div class="item-listing-container-skrn">
+								<a href="#"><img src="/images/demo/listing-4.jpg" alt="Listing"></a>
+								<div class=" item-listing-text-skrn">
+									<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Neighbors</a></h6>
+								      <div
+								        class="circle-rating-pro"
+								        data-value="0.72"
+								        data-animation-start-value="0.72"
+								        data-size="32"
+								        data-thickness="3"
+								        data-fill="{
+								          &quot;color&quot;: &quot;#42b740&quot;
+								        }"
+								        data-empty-fill="#def6de"
+								        data-reverse="true"
+								      ><span style="color:#42b740;">7.2</span></div>
+									</div><!-- close . item-listing-text-skrn-vertical-align -->
+								</div><!-- close . item-listing-text-skrn -->
+							</div><!-- close .item-listing-container-skrn -->
+						</div><!-- close .col -->
+					
+					
+						<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+							<div class="item-listing-container-skrn">
+								<a href="#"><img src="/images/demo/listing-5.jpg" alt="Listing"></a>
+								<div class=" item-listing-text-skrn">
+									<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Rogue One</a></h6>
+								      <div
+								        class="circle-rating-pro"
+								        data-value="0.86"
+								        data-animation-start-value="0.86"
+								        data-size="32"
+								        data-thickness="3"
+								        data-fill="{
+								          &quot;color&quot;: &quot;#42b740&quot;
+								        }"
+								        data-empty-fill="#def6de"
+								        data-reverse="true"
+								      ><span style="color:#42b740;">8.6</span></div>
+									</div><!-- close . item-listing-text-skrn-vertical-align -->
+								</div><!-- close . item-listing-text-skrn -->
+							</div><!-- close .item-listing-container-skrn -->
+						</div><!-- close .col -->
+					
+						<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+							<div class="item-listing-container-skrn">
+								<a href="#"><img src="/images/demo/listing-6.jpg" alt="Listing"></a>
+								<div class=" item-listing-text-skrn">
+									<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">The Imitation Game</a></h6>
+								      <div
+								        class="circle-rating-pro"
+								        data-value="0.6"
+								        data-animation-start-value="0.6"
+								        data-size="32"
+								        data-thickness="3"
+								        data-fill="{
+								          &quot;color&quot;: &quot;#ff4141&quot;
+								        }"
+								        data-empty-fill="#ffe1e1"
+								        data-reverse="true"
+								      ><span style="color:#ff4141;">6.0</span></div>
+									</div><!-- close . item-listing-text-skrn-vertical-align -->
+								</div><!-- close . item-listing-text-skrn -->
+							</div><!-- close .item-listing-container-skrn -->
+						</div><!-- close .col -->
+						<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+							<div class="item-listing-container-skrn">
+								<a href="#"><img src="/images/demo/listing-1.jpg" alt="Listing"></a>
+								<div class=" item-listing-text-skrn">
+									<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Imitation</a></h6>
+								      <div
+								        class="circle-rating-pro"
+								        data-value="0.6"
+								        data-animation-start-value="0.6"
+								        data-size="32"
+								        data-thickness="3"
+								        data-fill="{
+								          &quot;color&quot;: &quot;#ff4141&quot;
+								        }"
+								        data-empty-fill="#ffe1e1"
+								        data-reverse="true"
+								      ><span style="color:#ff4141;">6.0</span></div>
+									</div><!-- close . item-listing-text-skrn-vertical-align -->
+								</div><!-- close . item-listing-text-skrn -->
+							</div><!-- close .item-listing-container-skrn -->
+						</div><!-- close .col -->
+
+					</div><!-- close .row -->
+				
+				</div><!-- close .movie-details-section -->
+				
+			</div><!-- close .dashboard-container -->
+		</main>
+		
+		
+		</div><!-- close #sidebar-bg-->
+		<script>
+		// Change the second argument to your options:
+		// https://github.com/sampotts/plyr/#options
+		const player = new Plyr('video', {captions: {active: true}});
+
+		// Expose player so it can be used from the console
+		window.player = player;
+
+		</script>
+		<!-- <script>
+			function myFunction() {
+			var dots = document.getElementById("dots");
+			var moreText = document.getElementById("more");
+			var btnText = document.getElementById("myBtn");
+
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more"; 
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less"; 
+				moreText.style.display = "inline";
+			}
+		}
+
+		</script> -->
+		<!-- Required Framework JavaScript -->
+		<script src="https://cdn.plyr.io/3.5.0/plyr.js"></script>
+		<script src="https://cdn.plyr.io/3.5.0/plyr.polyfilled.js"></script>
+		<% include partials/script %>		
+		
+	</body>
+</html>

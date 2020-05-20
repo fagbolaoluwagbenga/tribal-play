@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700%7CMontserrat:300,400,600,700">
+
+	<link rel="stylesheet" href="icons/fontawesome/css/fontawesome-all.min.css"><!-- FontAwesome Icons -->
+	<link rel="stylesheet" href="icons/Iconsmind__Ultimate_Pack/Line%20icons/styles.min.css">
+	<!-- iconsmind.com Icons -->
+	<script>
+		function validateForm(form) {
+			var x = document.forms["registration"]["username"].value;
+			var y = document.forms["registration"]["password"].value;
+			var z = document.forms["registration"]["confirmpassword"].value;
+			var p = document.forms["registration"]["plan"].value;
+			var e = document.forms["registration"]["email"].value;
+
+			if (!form.terms.checked) {
+				alert("Please indicate that you accept the Terms and Conditions");
+				form.terms.focus();
+				return false;
+			}
+			if (x == "") {
+				alert("Name must be filled out");
+				return false;
+			}
+			if (y == "") {
+				alert("Password must be filled out");
+				return false;
+			}
+			if (z == "") {
+				alert("confirm Password must be filled out");
+				return false;
+			}
+
+			if (e == "") {
+				alert("input a valid email");
+				return false;
+			}
+			if (y !== z) {
+				alert("password dont match");
+				return false;
+			}
+			if (y.length && z.length < 6) {
+				alert("password should be at least 6 characters")
+			}
+
+
+
+		}
+	</script>
+	  <!-- Page Title Here -->
+	  <link rel="icon" href="img/favicon.png" type="image/png">
+	<title>
+		tribal play | media
+	</title>
+	<style>
+		.errors {
+			color: rgb(255, 101, 101)
+		}
+	</style>
+
+</head>
+
+<body>
+
+
+	<header id="masthead-pro">
+		<div class="container">
+			<h1><a href="/"><img src="images/logo.png" alt="Logo"></a></h1>
+	</header>
+
+
+	<div id="content-pro">
+
+		<div class="container">
+			<div class="centered-headings-pro pricing-plans-headings">
+				<h6>For one low monthly price</h6>
+				<h1>Instantly watch TV shows &amp; Movies</h1>
+			</div>
+		</div><!-- close .container -->
+
+		<div class="container">
+			<ul id="registration-steps-pro">
+				<li>
+					<a href="">
+						<div class="registration-step-circle-icon">01</div>
+						<div class="registration-step-number">Step 1</div>
+						<h5 class="registration-step-title">Choose your plan</h5>
+					</a>
+				</li>
+				<li class="current-menu-item">
+					<a href="/signup2">
+						<div class="registration-step-circle-icon">02</div>
+						<div class="registration-step-number">Step 2</div>
+						<h5 class="registration-step-title">Create your account</h5>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="registration-step-circle-icon">03</div>
+						<div class="registration-step-number">Step 3</div>
+						<h5 class="registration-step-title">Billing information</h5>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="registration-step-circle-icon">04</div>
+						<div class="registration-step-number">Step 4</div>
+						<h5 class="registration-step-title">Welcome to Tribal Play!</h5>
+					</a>
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+
+
+		<div id="pricing-plans-background-image">
+			<div class="container">
+				<div class="registration-steps-page-container">
+
+					<form class="registration-steps-form" form role="form" action="/signup2" method="POST"
+						name='registration' onSubmit="return validateForm(this);">
+
+						<div class="registration-social-login-container">
+							<div class="form-group">
+								<label for="username" class="col-form-label">Username</label>
+								<input type="text" class="form-control" id="username" name="username" maxlength="15"
+									placeholder="Johndoe"
+									value="<%= typeof username != 'undefined' ? username : '' %>" />
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-sm">
+										<label for="plan" class="col-form-label">Confirm choosen-plan</label>
+										<select name="plan" class="custom-select">
+											<% plans.forEach(function(plan){ %>
+											<option value="<%= plan.name %>"><%= plan.name %></option>
+											<% }); %>
+										</select>
+										<div class="dotted-dividers-pro"></div>
+									</div>
+									<!-- <div class="col">
+								</div> -->
+									<!-- <input type="submit" /> -->
+									<div class="row">
+										<div class="col">
+											<label for="email" class="col-form-label">Email</label>
+											<input type="text" class="form-control" name="email" id="email"
+												maxlength="35" placeholder="jondoe@gmail.com"
+												value="<%= typeof email != 'undefined' ? email : '' %>" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col">
+										<label for="password" class="col-form-label">Password</label>
+										<input type="password" class="form-control" maxlength="15" name="password"
+											id="password" placeholder="&middot;&middot;&middot;&middot;&middot;&middot;"
+											value="<%= typeof password != 'undefined' ? password : '' %>" />
+									</div>
+
+									<div class="col">
+										<label for="confirmpassword" class="col-form-label">Confirm password</label>
+										<label for="confirm-password" class="col-form-label">&nbsp;</label>
+										<input type="password" class="form-control" maxlength="15" id="confirmpassword"
+											name="confirmpassword" placeholder="Confirm Password"
+											value="<%= typeof confirmpassword != 'undefined' ? confirmpassword : '' %>" />
+									</div>
+								</div>
+							</div>
+
+							<div class="registration-social-login-or">or</div>
+
+						</div><!-- close .registration-social-login-container -->
+
+						<div class="registration-social-login-options">
+							<h6>Sign up with one of your social accounts</h6>
+						<a href="/auth/facebook"><div class="social-icon-login facebook-color"><i class="fab fa-facebook-f"></i> Facebook
+							</div></a>
+						<a href="/auth/twitter"><div class="social-icon-login twitter-color"><i class="fab fa-twitter"></i> Twitter
+						</div></a>
+							<a href="/auth/google"><div class="social-icon-login google-color"><i class="fab fa-google-plus-g"></i>  Google</div></a>
+						</div><!-- close .registration-social-login-options -->
+
+						<div class="clearfix"></div>
+						<div class="form-group last-form-group-continue">
+							<button type="submit" name="submit" onclick="getOption()" value="Submit"class="btn btn-green-pro">continue to</button>
+
+
+
+							<!-- <form type="form" action="/yourscript.cgi-or-your-page.html" method="POST" onsubmit="return checkCheckBox(this)"> -->
+							<span class="checkbox-remember-pro"><input type="checkbox" value="0" name="terms"
+									id="checkbox-terms"><label for="checkbox-terms" class="col-form-label">By clicking
+									"Continue", you agree to
+									our <a data-toggle="modal" data-target="#TermModal" role="button" href="#!">Terms of
+										Use</a> and
+									<a data-toggle="modal" data-target="#PolicyModal" role="button" href="#!">Privacy
+										Policy</a> including the use of cookies.</label></span>
+							<!-- </form> -->
+							<!-- <button type="submit" name="submit" onclick="getOption()" value="Submit" class="btn btn-green-pro">continue to
+							</button> -->
+
+
+
+							<div class="clearfix"></div>
+						</div>
+					</form>
+
+				</div><!-- close .registration-steps-page-container -->
+
+			</div><!-- close .container -->
+		</div><!-- close #pricing-plans-background-image -->
+
+	</div><!-- close #content-pro -->
+
+	<footer id="footer-pro">
+		<div class="container">
+			<div class="row">
+				<div class="col-md">
+					<a href="/faqs">
+						<div class="copyright-text-pro">&copy; Copyright 2020 Tribal Play
+					</a>.</div>
+			</div><!-- close .col -->
+			<div class="col-md">
+				<ul class="social-icons-pro">
+					<li class="facebook-color"><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+					<li class="twitter-color"><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+					<li class="youtube-color"><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+					<li class="vimeo-color"><a href="#" target="_blank"><i class="fab fa-vimeo-v"></i></a></li>
+				</ul>
+			</div><!-- close .col -->
+		</div><!-- close .row -->
+		</div><!-- close .container -->
+	</footer>
+
+	<a href="#0" id="pro-scroll-top"><i class="fas fa-chevron-up"></i></a>
+
+
+	<!-- Modal -->
+	<% include partials/terms %>
+
+	<!-- <script>
+function checkCheckBox(f){
+if (f.agree.checked == false )
+{
+alert('Please check the box to continue.');
+return false;
+}else
+return true;
+} -->
+	</script>
+	<script src="indexed/js/vendor/all.js"></script>
+	<script src="js/validator.js"></script>
+	<script src="js/libs/jquery-3.3.1.min.js"></script><!-- jQuery -->
+	<script src="js/libs/popper.min.js" defer></script><!-- Bootstrap Popper/Extras JS -->
+	<script src="js/libs/bootstrap.min.js" defer></script><!-- Bootstrap Main JS -->
+	<!-- All JavaScript in Footer -->
+
+	<!-- Additional Plugins and JavaScript -->
+	<script src="js/navigation.js" defer></script><!-- Header Navigation JS -->
+	<script src="js/jquery.flexslider-min.js" defer></script><!-- Custom Document Ready JS -->
+	<script src="js/script.js" defer></script><!-- Custom Document Ready JS -->
+
+</body>
+
+</html>

@@ -1,0 +1,357 @@
+<% include partials/head %>
+<% include partials/header %>
+<% include partials/navigation-bar %>
+	
+		
+		<div id="content-sidebar-pro">
+			
+			<div id="content-sidebar-info">
+				<!-- <img src="<%= user.profile_pic %>" alt=""> -->
+			<img src="./images/default.png" alt="">	
+				<div id="profile-sidebar-name">
+					<h5><%= user.username %> </h5>
+						<script language="JavaScript" src="//www.iplocationtools.com/ip-geolocation.js?key=7d62656d626d64656e773f787a"></script>
+						<script language="JavaScript">
+						
+						document.write('<i class="fas fa-map-marker-alt"></i>' + ' ' + ip2location_city() + ', ' + ip2location_country_long() + '.');
+						</script>	
+					</h6>
+				</div>
+				<div id="profile-sidebar-gradient"></div>
+				<a href="/account/<%= user._id %>/edit" class="edit-profile-sidebar"><i class="fas fa-pencil-alt"></i></a>
+			</div>
+			
+			<div class="content-sidebar-section">
+				<h3 class="content-sidebar-sub-header">Available Soon</h3>
+				<ul id="profile-watched-stats">
+					<li><span>43</span> Movies</li>
+					<li><span>28</span> Series</li>
+					<li><span>07</span> Docs</li>
+				</ul>
+			</div><!-- close .content-sidebar-section -->
+			
+			<div class="content-sidebar-section">
+				<h3 class="content-sidebar-sub-header">Favorite Genres</h3>
+				<ul id="profile-favorite-genres">
+					<li>
+						<img src="images/genres/comedy.png" alt="Comedy">
+					</li>
+					<li>
+						<img src="images/genres/action.png" alt="Action">
+					</li>
+					<li>
+						<img src="images/genres/romance.png" alt="Romance">
+					</li>
+					<li>
+						<img src="images/genres/fantasy.png" alt="Fantasy">
+					</li>
+					
+				</ul>
+				<br>
+			</div>
+				<hr>
+				<br>
+			
+				<div class="content-sidebar-section">
+				<ul id="profile-favorite-genres">
+					<li>
+						<img src="images/genres/horror.png" alt="Comedy">
+					</li>
+					<li>
+						<img src="images/genres/documentary.png" alt="Action">
+					</li>
+					<li>
+						<img src="images/genres/animation.png" alt="Romance">
+					</li>
+					<li>
+						<img src="images/genres/drama.png" alt="Fantasy">
+					</li>
+					
+				</ul>				
+				<div class="clearfix"></div>
+			</div><!-- close .content-sidebar-section -->
+			
+			<!-- <div class="content-sidebar-section">
+				<h3 class="content-sidebar-sub-header">Friends: 87</h3>
+				<ul id="friends-activity-profiles">
+					<li><a href="#!"><img src="images/demo/user-8.jpg" alt="Friend"></a></li>
+					<li><a href="#!"><img src="images/demo/user-9.jpg" alt="Friend"></a></li>
+					<li><a href="#!"><img src="images/demo/user-10.jpg" alt="Friend"></a></li>
+					<li><a href="#!"><img src="images/demo/user-11.jpg" alt="Friend"></a></li>
+					<li class="friends-activity-profiles-more"><a href="#!">+83</a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div> -->
+			<!-- close .content-sidebar-section -->
+			
+			<!-- <div class="content-sidebar-section">
+				<h3 class="content-sidebar-sub-header">Friends Activity</h3>
+				<ul id="friends-activity-feed">
+					<li><img src="images/demo/user-15.jpg" alt="Friend">Added <a href="#!">Interstellar</a> to her Favorite Playlist</li>
+					<li><img src="images/demo/user-8.jpg" alt="Friend">Wants to Watch <a href="#!">The Imitation Game</a></li>
+					<li><img src="images/demo/user-9.jpg" alt="Friend">Added <a href="#!">Moonlight</a> to his <a href="#!">Playlist Best Dramas</a></li>
+					<li><img src="images/demo/user-4.jpg" alt="Friend">Watched <a href="#!">Transformers: The Last Knight</a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div> -->
+			<!-- close .content-sidebar-section -->
+			
+			
+		</div><!-- close #content-sidebar-pro -->
+
+		<main id="col-main-with-sidebar">
+			
+			<div class="dashboard-container">
+				
+				<ul class="dashboard-sub-menu">
+					<li class="current"><a href="#!">Recommended</a></li>
+					<li><a href="#!">Favorites</a></li>
+					<li><a href="#!">Playlists</a></li>
+					<li><a href="#!">Reviews</a></li>
+					<li><a href="#!">Friends</a></li>
+				</ul><!-- close .dashboard-sub-menu -->
+				
+				
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-skrn">
+							<a href="#"><img src="images/demo/listing-1.jpg" alt="Listing"></a>
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">The Wild Things Are</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close . item-listing-text-skrn-vertical-align -->
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-skrn">
+							<a href="#"><img src="images/demo/listing-2.jpg" alt="Listing"></a>
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Central Intelligence</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.6"
+							        data-animation-start-value="0.6"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#ff4141&quot;
+							        }"
+							        data-empty-fill="#ffe1e1"
+							        data-reverse="true"
+							      ><span style="color:#ff4141;">6.0</span></div>
+								</div><!-- close . item-listing-text-skrn-vertical-align -->
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+					
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-skrn">
+							<a href="#"><img src="images/demo/listing-3.jpg" alt="Listing"></a>
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Zoolander No. 2</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close . item-listing-text-skrn-vertical-align -->
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-skrn">
+							<a href="#"><img src="images/demo/listing-4.jpg" alt="Listing"></a>
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Bad Neighbors 2</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.72"
+							        data-animation-start-value="0.72"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">7.2</span></div>
+								</div><!-- close . item-listing-text-skrn-vertical-align -->
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+					
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-skrn">
+							<a href="#"><img src="images/demo/listing-5.jpg" alt="Listing"></a>
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Star Wars: Rogue One</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close . item-listing-text-skrn-vertical-align -->
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-skrn">
+							<a href="#"><img src="images/demo/listing-6.jpg" alt="Listing"></a>
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">The Imitation Game</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.6"
+							        data-animation-start-value="0.6"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#ff4141&quot;
+							        }"
+							        data-empty-fill="#ffe1e1"
+							        data-reverse="true"
+							      ><span style="color:#ff4141;">6.0</span></div>
+								</div><!-- close . item-listing-text-skrn-vertical-align -->
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+					
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-skrn">
+							<a href="#"><img src="images/demo/listing-7.jpg" alt="Listing"></a>
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Fantastic Beasts</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close . item-listing-text-skrn-vertical-align -->
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-skrn">
+							<a href="#"><img src="images/demo/listing-8.jpg" alt="Listing"></a>
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Edge of Tomorrow</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.72"
+							        data-animation-start-value="0.72"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">7.2</span></div>
+								</div><!-- close . item-listing-text-skrn-vertical-align -->
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-skrn">
+							<a href="#"><img src="images/demo/listing-9.jpg" alt="Listing"></a>
+							<div class=" item-listing-text-skrn">
+								<div class=" item-listing-text-skrn-vertical-align"><h6><a href="#">Allegiant</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close . item-listing-text-skrn-vertical-align -->
+							</div><!-- close . item-listing-text-skrn -->
+						</div><!-- close .item-listing-container-skrn -->
+					</div><!-- close .col -->
+									
+				</div><!-- close .row -->
+				
+				
+				<ul class="page-numbers">
+					<li><a class="previous page-numbers" href="#!"><i class="fas fa-chevron-left"></i></a></li>
+					<li><span class="page-numbers current">1</span></li>
+					<li><a class="page-numbers" href="#!">2</a></li>
+					<li><a class="page-numbers" href="#!">3</a></li>
+					<li><a class="page-numbers" href="#!">4</a></li>
+					<li><a class="next page-numbers" href="#!"><i class="fas fa-chevron-right"></i></a></li>
+				</ul>
+
+				
+ 
+				
+ 				
+				
+				
+			</div><!-- close .dashboard-container -->
+		</main>
+	
+
+
+		
+		</div><!-- close #sidebar-bg-->
+		<% include partials/script %>
+				
+		<script type="text/javascript">
+			var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+			(function(){
+			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+			s1.async=true;
+			s1.src='https://embed.tawk.to/5d2dddc8bfcb827ab0cc0f50/default';
+			s1.charset='UTF-8';
+			s1.setAttribute('crossorigin','*');
+			s0.parentNode.insertBefore(s1,s0);
+			})();
+			</script>
+		
+	</body>
+</html>

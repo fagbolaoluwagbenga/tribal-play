@@ -1,0 +1,118 @@
+<% include partials/head %>
+<% include partials/header %>
+<% include partials/navigation-bar %>
+
+<main id="col-main">
+		<div class="wrapper">  
+						<div class="row">
+								<% deathScenes.forEach(function(deathScene) { %>
+							<div class="col-lg-4">
+									<!-- <div style="padding-right: 320px" class="circle-rating-pro" data-value="0.86" data-animation-start-value="1.0" data-size="30" data-thickness="2" data-fill="{&quot;color&quot;: &quot;#42b740&quot;}" data-empty-fill="#def6de" data-reverse="true">
+											<span style="color:#42b740; align-content: left"><%= deathScene.rank %></span>								
+									</div> -->
+								<div class="card" style="background-image: url('https://cdn.tribalplay.io/movie-thrills/death-scene/image<%= deathScene.image_path %>')">
+													  <div class="card__content">
+														<a class="play-button afterglow" href="#player">
+														  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50">
+															<path d="M42.7,42.7L25,50L7.3,42.7L0,25L7.3,7.3L25,0l17.7,7.3L50,25L42.7,42.7z" class="polygon"></path>
+															<polygon points="32.5,25 21.5,31.4 21.5,18.6 "></polygon>
+														  </svg>
+														</a>
+														<div class="card__content--description">
+														  <h3 class="roll-up">
+															<span><span>P</span><span>P</span></span>
+															<span><span>l</span><span>l</span></span>
+															<span><span>a</span><span>a</span></span>
+															<span><span>y</span><span>y</span></span>
+														  </h3>
+														  <!-- <a class="movie-detail-header-play-btn afterglow" href="#player"><i class="fas fa-play"></i></a> -->
+														  
+														  <video controls crossorigin playsinline id="player" playsinline controls poster="https://cdn.tribalplay.io/movie-thrills/death-scene/video/image/<%= deathScene.image_path %>" width="1" height="1">
+																	<source src="https://cdn.tribalplay.io/movie-thrills/death-scene/video/<%= deathScene.video_path %>" type="video/mp4">
+																	<source src="https://cdn.tribalplay.io/movie-thrills/death-scene/video/<%= deathScene.video_path %>" type="video/webm">
+														<!-- Caption files -->
+														<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+														default>
+														<track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
+														<track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+														<!-- Fallback for browsers that don't support the <video> element -->
+														<!-- <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trai
+															ler-576p.mp4" download>Download</a> -->
+											
+														 </video>
+											
+														  <h6 style="letter-spacing: 0.2em; font-weight: 10; font-size: 0.8rem;" class="text-reveal">
+															<span>
+														
+															  <span><%= deathScene.title.toUpperCase() %></span>
+															  <span><%= deathScene.runtime%> min</span>
+															  <span><%= deathScene.vote_average%> min</span>
+															</span>
+															<span>
+															 
+															  <span><span><%= deathScene.title.toUpperCase() %></span></span>
+															  <span><span><%= deathScene.runtime%> min </span></span>
+															  <span><span><%= deathScene.vote_average%></span></span>
+															</span>
+														</h6>
+														</div>
+													  </div>
+								</div>
+							</div>					  
+		             	<% }) %> 							 
+			</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+			<ul class="page-numbers">
+				<li><a class="previous page-numbers" href="#!"><i class="fas fa-chevron-left"></i></a></li>
+				<li><span class="page-numbers current">1</span></li>
+				<li><a class="page-numbers" href="#!">2</a></li>
+				<li><a class="page-numbers" href="#!">3</a></li>
+				<li><a class="page-numbers" href="#!">4</a></li>
+				<li><a class="next page-numbers" href="#!"><i class="fas fa-chevron-right"></i></a></li>
+			</ul>
+
+		</div>
+</main>		
+
+	
+
+
+
+
+
+		
+		<script>
+		// Change the second argument to your options:
+		// https://github.com/sampotts/plyr/#options
+		const player = new Plyr('video', {captions: {active: true}});
+
+		// Expose player so it can be used from the console
+		window.player = player;
+
+		</script>
+		<!-- <script>
+			function myFunction() {
+			var dots = document.getElementById("dots");
+			var moreText = document.getElementById("more");
+			var btnText = document.getElementById("myBtn");
+
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more"; 
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less"; 
+				moreText.style.display = "inline";
+			}
+		}
+
+		</script> -->
+		<% include partials/script %>		
+		
+	</body>
+</html>

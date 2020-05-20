@@ -1,0 +1,488 @@
+<% include partials/heada %>
+<% include partials/headera %>
+<% include partials/navigation-bara %>
+
+
+		<main id="col-main">
+			
+			<div class="dashboard-container">
+				
+				<ul class="dashboard-sub-menu">
+					<li class="current"><a href="/account/<%= user._id%>/edit">Account Settings</a></li>
+					<li><a href="/account-payment">Payment Info</a></li>
+				</ul><!-- close .dashboard-sub-menu -->
+				<form action="/uploadUser" method="POST" enctype="multipart/form-data">
+				<div class="container-fluid">
+					<div class="row">
+					
+						<div class="col-12  col-lg-3">
+							<div id="account-edit-photo">
+								<div><img src="/images/default.png" alt="" class="responsive-img"></div>
+									<div class="file-field input-field">
+										
+										<!-- <%= typeof msg != "undefined" ? msg : "" %> -->
+											<input type="file" class="form-control" id="title" name="userImage">
+											<!-- <img src="<%= typeof file != "undefined" ? file : "" %>" alt="" class="responsive-img"> -->
+										</div>	
+										<button type="submit" class="btn btn-green-pro">Change Profile Picture</button>					
+								</form>
+
+								<p><a href="#!" ></a></p>
+								<!-- <p><a href="#!" class="btn">Delete Photo</a></p> -->
+							</div>
+						</div><!-- close .col -->
+						<div class="col">
+						
+							<form name="registration" class="account-settings-form" form role="form" action="/account/<%= user._id %>/updated?_method=PUT" method="POST">
+						
+							<h5>General Information</h5>
+							<p class="small-paragraph-spacing">By letting us know your name, we can make our support experience much more personal.</p>
+							<div class="row">
+								<!-- <div class="col-sm">
+									<div class="form-group">
+									  <label for="first-name" class="col-form-label">Username:</label>
+										<input type="text" class="form-control" id="username" name="user[username]" value="<%= user.username %>">
+									</div>
+							  </div> -->
+							  <!-- close .col -->
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="first-name" class="col-form-label">First Name:</label>
+	   	  							 <input type="text" class="form-control" id="first-name" name="user[firstName]" value="<%= user.firstName %>">
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+    	  								 <label for="last-name" class="col-form-label">Last Name:</label>
+    	  	  							 <input type="text" class="form-control" id="last-name" name="user[lastName]" value="<%= user.lastName %>">
+    	  	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+						<label for="last-name" class="col-form-label">Country: </label>
+										   <div class="custom-select" class="form-group">
+											<script language="JavaScript"
+												src="//www.iplocationtools.com/ip-geolocation.js?key=657f6f6e6f697b7a7b"></script>
+											<script language="JavaScript"
+												src="//www.iplocationtools.com/ip-geolocation.js?key=657f6f6e6f697b7a7b"></script>
+											<script language="JavaScript">
+											
+											var arrCountry = new Object();
+												arrCountry['AF'] = 'Afghanistan';
+												arrCountry['AX'] = 'Åland Islands';
+												arrCountry['AL'] = 'Albania';
+												arrCountry['DZ'] = 'Algeria';
+												arrCountry['AS'] = 'American Samoa';
+												arrCountry['AD'] = 'Andorra';
+												arrCountry['AO'] = 'Angola';
+												arrCountry['AI'] = 'Anguilla';
+												arrCountry['AQ'] = 'Antarctica';
+												arrCountry['AG'] = 'Antigua and Barbuda';
+												arrCountry['AR'] = 'Argentina';
+												arrCountry['AM'] = 'Armenia';
+												arrCountry['AW'] = 'Aruba';
+												arrCountry['AU'] = 'Australia';
+												arrCountry['AT'] = 'Austria';
+												arrCountry['AZ'] = 'Azerbaijan';
+												arrCountry['BS'] = 'Bahamas';
+												arrCountry['BH'] = 'Bahrain';
+												arrCountry['BD'] = 'Bangladesh';
+												arrCountry['BB'] = 'Barbados';
+												arrCountry['BY'] = 'Belarus';
+												arrCountry['BE'] = 'Belgium';
+												arrCountry['BZ'] = 'Belize';
+												arrCountry['BJ'] = 'Benin';
+												arrCountry['BM'] = 'Bermuda';
+												arrCountry['BT'] = 'Bhutan';
+												arrCountry['BO'] = 'Bolivia';
+												arrCountry['BA'] = 'Bosnia and Herzegovina';
+												arrCountry['BW'] = 'Botswana';
+												arrCountry['BV'] = 'Bouvet Island';
+												arrCountry['BR'] = 'Brazil';
+												arrCountry['IO'] = 'British Indian Ocean Territory';
+												arrCountry['BN'] = 'Brunei Darussalam';
+												arrCountry['BG'] = 'Bulgaria';
+												arrCountry['BF'] = 'Burkina Faso';
+												arrCountry['BI'] = 'Burundi';
+												arrCountry['KH'] = 'Cambodia';
+												arrCountry['CM'] = 'Cameroon';
+												arrCountry['CA'] = 'Canada';
+												arrCountry['CV'] = 'Cape Verde';
+												arrCountry['KY'] = 'Cayman Islands';
+												arrCountry['CF'] = 'Central African Republic';
+												arrCountry['TD'] = 'Chad';
+												arrCountry['CL'] = 'Chile';
+												arrCountry['CN'] = 'China';
+												arrCountry['CX'] = 'Christmas Island';
+												arrCountry['CC'] = 'Cocos (Keeling) Islands';
+												arrCountry['CO'] = 'Colombia';
+												arrCountry['KM'] = 'Comoros';
+												arrCountry['CG'] = 'Congo';
+												arrCountry['CD'] = 'Congo, Democratic Republic of the';
+												arrCountry['CK'] = 'Cook Islands';
+												arrCountry['CR'] = 'Costa Rica';
+												arrCountry['CI'] = 'Cote D\'ivoire';
+												arrCountry['HR'] = 'Croatia';
+												arrCountry['CU'] = 'Cuba';
+												arrCountry['CY'] = 'Cyprus';
+												arrCountry['CZ'] = 'Czech Republic';
+												arrCountry['DK'] = 'Denmark';
+												arrCountry['DJ'] = 'Djibouti';
+												arrCountry['DM'] = 'Dominica';
+												arrCountry['DO'] = 'Dominican Republic';
+												arrCountry['EC'] = 'Ecuador';
+												arrCountry['EG'] = 'Egypt';
+												arrCountry['SV'] = 'El Salvador';
+												arrCountry['GQ'] = 'Equatorial Guinea';
+												arrCountry['ER'] = 'Eritrea';
+												arrCountry['EE'] = 'Estonia';
+												arrCountry['ET'] = 'Ethiopia';
+												arrCountry['FK'] = 'Falkland Islands (Malvinas)';
+												arrCountry['FO'] = 'Faroe Islands';
+												arrCountry['FJ'] = 'Fiji';
+												arrCountry['FI'] = 'Finland';
+												arrCountry['FR'] = 'France';
+												arrCountry['GF'] = 'French Guiana';
+												arrCountry['PF'] = 'French Polynesia';
+												arrCountry['TF'] = 'French Southern Territories';
+												arrCountry['GA'] = 'Gabon';
+												arrCountry['GM'] = 'Gambia';
+												arrCountry['GE'] = 'Georgia';
+												arrCountry['DE'] = 'Germany';
+												arrCountry['GH'] = 'Ghana';
+												arrCountry['GI'] = 'Gibraltar';
+												arrCountry['GR'] = 'Greece';
+												arrCountry['GL'] = 'Greenland';
+												arrCountry['GD'] = 'Grenada';
+												arrCountry['GP'] = 'Guadeloupe';
+												arrCountry['GU'] = 'Guam';
+												arrCountry['GT'] = 'Guatemala';
+												arrCountry['GN'] = 'Guinea';
+												arrCountry['GW'] = 'Guinea-Bissau';
+												arrCountry['GY'] = 'Guyana';
+												arrCountry['HT'] = 'Haiti';
+												arrCountry['HM'] = 'Heard Island and Mcdonald Islands';
+												arrCountry['HN'] = 'Honduras';
+												arrCountry['HK'] = 'Hong Kong';
+												arrCountry['HU'] = 'Hungary';
+												arrCountry['IS'] = 'Iceland';
+												arrCountry['IN'] = 'India';
+												arrCountry['ID'] = 'Indonesia';
+												arrCountry['IR'] = 'Iran, Islamic Republic of';
+												arrCountry['IQ'] = 'Iraq';
+												arrCountry['IE'] = 'Ireland';
+												arrCountry['IL'] = 'Israel';
+												arrCountry['IT'] = 'Italy';
+												arrCountry['JM'] = 'Jamaica';
+												arrCountry['JP'] = 'Japan';
+												arrCountry['JO'] = 'Jordan';
+												arrCountry['KZ'] = 'Kazakhstan';
+												arrCountry['KE'] = 'Kenya';
+												arrCountry['KI'] = 'Kiribati';
+												arrCountry['KP'] = 'Korea, Democratic People\'s Republic of';
+												arrCountry['KR'] = 'Korea, Republic of';
+												arrCountry['KW'] = 'Kuwait';
+												arrCountry['KG'] = 'Kyrgyzstan';
+												arrCountry['LA'] = 'Lao People\'s Democratic Republic';
+												arrCountry['LV'] = 'Latvia';
+												arrCountry['LB'] = 'Lebanon';
+												arrCountry['LS'] = 'Lesotho';
+												arrCountry['LR'] = 'Liberia';
+												arrCountry['LY'] = 'Libyan Arab Jamahiriya';
+												arrCountry['LI'] = 'Liechtenstein';
+												arrCountry['LT'] = 'Lithuania';
+												arrCountry['LU'] = 'Luxembourg';
+												arrCountry['MK'] = 'Macedonia, the Former Yugoslav Republic of';
+												arrCountry['MG'] = 'Madagascar';
+												arrCountry['MW'] = 'Malawi';
+												arrCountry['MY'] = 'Malaysia';
+												arrCountry['MV'] = 'Maldives';
+												arrCountry['ML'] = 'Mali';
+												arrCountry['MT'] = 'Malta';
+												arrCountry['MH'] = 'Marshall Islands';
+												arrCountry['MQ'] = 'Martinique';
+												arrCountry['MR'] = 'Mauritania';
+												arrCountry['MU'] = 'Mauritius';
+												arrCountry['YT'] = 'Mayotte';
+												arrCountry['MX'] = 'Mexico';
+												arrCountry['FM'] = 'Micronesia';
+												arrCountry['MD'] = 'Moldova';
+												arrCountry['MC'] = 'Monaco';
+												arrCountry['MN'] = 'Mongolia';
+												arrCountry['ME'] = 'Montenegro';
+												arrCountry['MS'] = 'Montserrat';
+												arrCountry['MA'] = 'Morocco';
+												arrCountry['MO'] = 'Mozambique';
+												arrCountry['MZ'] = 'Mozambique';
+												arrCountry['MM'] = 'Myanmar';
+												arrCountry['NA'] = 'Namibia';
+												arrCountry['NR'] = 'Nauru';
+												arrCountry['NP'] = 'Nepal';
+												arrCountry['NL'] = 'Netherlands';
+												arrCountry['AN'] = 'Netherlands Antilles';
+												arrCountry['NT'] = 'Neutral Zone';
+												arrCountry['NC'] = 'New Caledonia';
+												arrCountry['NZ'] = 'New Zealand';
+												arrCountry['NI'] = 'Nicaragua';
+												arrCountry['NE'] = 'Niger';
+												arrCountry['NG'] = 'Nigeria';
+												arrCountry['NU'] = 'Niue';
+												arrCountry['NF'] = 'Norfolk Island';
+												arrCountry['MP'] = 'Northern Mariana Islands';
+												arrCountry['NO'] = 'Norway';
+												arrCountry['OM'] = 'Oman';
+												arrCountry['PK'] = 'Pakistan';
+												arrCountry['PW'] = 'Palau';
+												arrCountry['PS'] = 'Palestinian Territory, Occupied';
+												arrCountry['PA'] = 'Panama';
+												arrCountry['PG'] = 'Papua New Guinea';
+												arrCountry['PY'] = 'Paraguay';
+												arrCountry['PE'] = 'Peru';
+												arrCountry['PH'] = 'Philippines';
+												arrCountry['PN'] = 'Pitcairn';
+												arrCountry['PL'] = 'Poland';
+												arrCountry['PT'] = 'Portugal';
+												arrCountry['PR'] = 'Puerto Rico';
+												arrCountry['QA'] = 'Qatar';
+												arrCountry['RE'] = 'Reunion';
+												arrCountry['RO'] = 'Romania';
+												arrCountry['RU'] = 'Russian Federation';
+												arrCountry['RW'] = 'Rwanda';
+												arrCountry['SH'] = 'Saint Helena';
+												arrCountry['KN'] = 'Saint Kitts and Nevis';
+												arrCountry['LC'] = 'Saint Lucia';
+												arrCountry['PM'] = 'Saint Pierre and Miquelon';
+												arrCountry['VC'] = 'Saint Vincent and the Grenadines';
+												arrCountry['WS'] = 'Samoa';
+												arrCountry['SM'] = 'San Marino';
+												arrCountry['ST'] = 'Sao Tome and Principe';
+												arrCountry['SA'] = 'Saudi Arabia';
+												arrCountry['SN'] = 'Senegal';
+												arrCountry['RS'] = 'Serbia';
+												arrCountry['CS'] = 'Serbia and Montenegro';
+												arrCountry['SY'] = 'Seychelles';
+												arrCountry['SC'] = 'Seychelles';
+												arrCountry['SL'] = 'Sierra Leone';
+												arrCountry['SG'] = 'Singapore';
+												arrCountry['SK'] = 'Slovakia';
+												arrCountry['SI'] = 'Slovenia';
+												arrCountry['SB'] = 'Solomon Islands';
+												arrCountry['SO'] = 'Somalia';
+												arrCountry['ZA'] = 'South Africa';
+												arrCountry['GS'] = 'South Georgia and the South Sandwich Islands';
+												arrCountry['ES'] = 'Spain';
+												arrCountry['LK'] = 'Sri Lanka';
+												arrCountry['SD'] = 'Sudan';
+												arrCountry['SR'] = 'Suriname';
+												arrCountry['SJ'] = 'Svalbard and Jan Mayen Islands';
+												arrCountry['SZ'] = 'Swaziland';
+												arrCountry['SE'] = 'Sweden';
+												arrCountry['CH'] = 'Switzerland';
+												arrCountry['TW'] = 'Taiwan';
+												arrCountry['TJ'] = 'Tajikistan';
+												arrCountry['TZ'] = 'Tanzania, United Republic of';
+												arrCountry['TH'] = 'Thailand';
+												arrCountry['TL'] = 'Timor-Leste';
+												arrCountry['TG'] = 'Togo';
+												arrCountry['TK'] = 'Tokelau';
+												arrCountry['TO'] = 'Tonga';
+												arrCountry['TT'] = 'Trinidad and Tobago';
+												arrCountry['TN'] = 'Tunisia';
+												arrCountry['TR'] = 'Turkey';
+												arrCountry['TM'] = 'Turkmenistan';
+												arrCountry['TC'] = 'Turks and Caicos Islands';
+												arrCountry['TV'] = 'Tuvalu';
+												arrCountry['UG'] = 'Uganda';
+												arrCountry['UA'] = 'Ukraine';
+												arrCountry['AE'] = 'United Arab Emirates';
+												arrCountry['GB'] = 'United Kingdom';
+												arrCountry['UK'] = 'United Kingdom';
+												arrCountry['US'] = 'United States';
+												arrCountry['UY'] = 'Uruguay';
+												arrCountry['UZ'] = 'Uzbekistan';
+												arrCountry['VU'] = 'Vanuatu';
+												arrCountry['VA'] = 'Vatican City State';
+												arrCountry['VE'] = 'Venezuela';
+												arrCountry['VN'] = 'Viet Nam';
+												arrCountry['VG'] = 'Virgin Islands, British';
+												arrCountry['VI'] = 'Virgin Islands, U.S.';
+												arrCountry['WF'] = 'Wallis and Futuna Islands';
+												arrCountry['EH'] = 'Western Sahara';
+												arrCountry['YE'] = 'Yemen';
+												arrCountry['YU'] = 'Yugoslavia';
+												arrCountry['ZM'] = 'Zambia';
+												arrCountry['ZW'] = 'Zimbabwe';
+								
+												document.write('<select name="country">');
+												for (key in arrCountry) {
+													if (ip2location_country_short() == key) {
+														document.write('<option value="' + key + '" selected> ' + arrCountry[key] + '</option>');
+													}
+													else {
+														document.write('<option value="' + key + '"> ' + arrCountry[key] + '</option>');
+													}
+												}
+												document.write('</select>');
+											
+											</script>
+										</div>
+										<p style="color: red; font-family: 'Courier New',Courier, monospace; font-size: 12px">Location Pinged</p>
+									 </div>
+								</div>
+								<!-- close .col -->
+							</div><!-- close .row -->
+							<hr>
+						
+							<h5>Account Information</h5>
+							<p class="small-paragraph-spacing">You can change the email address you use here.</p>
+							
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="e-mail" class="col-form-label">E-mail</label>
+	   	  							 <input type="text" class="form-control" id="e-mail" name="" value="<%= user.email %>">
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+    	  								 <div><label for="button-change" class="col-form-label">&nbsp; &nbsp;</label></div>
+    	  	  							 <a href="#!" class="btn btn-form">Verify E-mail</a>
+    	  	  						 </div>
+								</div><!-- close .col -->
+								
+							</div><!-- close .row -->
+							
+							<!-- <hr>
+							<h5>Change Password</h5>
+							<p class="small-paragraph-spacing">You can change the password you use for your account here.</p>
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="password" class="col-form-label">Current Password:</label>
+	   	  							 <input type="text" class="form-control" id="password" value="&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;">
+	   	  						 </div>
+								</div>
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="new-password" class="col-form-label">New Password:</label>
+	   	  							 <input type="text" class="form-control" id="new-password" name="user[password]" placeholder="Minimum of 6 characters">
+	   	  						 </div>
+								</div>
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <div><label for="confirm-password" class="col-form-label">&nbsp; &nbsp;</label></div>
+	   	  							 <input type="text" class="form-control" id="confirm-password" name="user[confirmpassword]" placeholder="Confirm New Password">
+	   	  						 </div>
+								</div>
+							</div> -->
+							<!-- close .row -->
+							
+							<hr>
+							<h5>Preferred Genres</h5>
+							<p class="small-paragraph-spacing">Pick your favorite genres for content.</p>
+							
+								<div class="registration-genres-step">
+									<ul class="registration-genres-choice">
+										<li class="active">
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/drama.png" alt="Drama">
+											<h6>Drama</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/comedy.png" alt="Comedy">
+											<h6>Comedy</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/action.png" alt="Action">
+											<h6>Action</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/romance.png" alt="Romance">
+											<h6>Romance</h6>
+										</li>
+										<li class="active">
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/horror.png" alt="Horror">
+											<h6>Horror</h6>
+										</li>
+										<li class="active">
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/fantasy.png" alt="Fantasy">
+											<h6>Fantasy</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/sci-fi.png" alt="Sci-Fi">
+											<h6>Sci-Fi</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/thriller.png" alt="Thriller">
+											<h6>Thriller</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/western.png" alt="Western">
+											<h6>Western</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/adventure.png" alt="Adventure">
+											<h6>Adventure</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/animation.png" alt="Animation">
+											<h6>Animation</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="/images/genres/documentary.png" alt="Documentary">
+											<h6>Documentary</h6>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div><!-- close .registration-genres-step -->
+								<div class="clearfix"></div>
+							<hr>
+						<p style="color: red; font-family: 'Courier New', Courier, monospace; font-size: 12px">Refresh after Submission</p>
+
+							<button type="submit" name="submit" onclick="getOption()" value="Submit"
+							class="btn btn-green-pro">save changes
+						</button>
+
+							<!-- <p><a href="" type="button" class="btn btn-green-pro">Save Changes</a></p> -->
+							<br>
+							</form>
+						
+						</div><!-- close .col -->
+					
+					</div><!-- close .row -->
+				</div><!-- close .container-fluid -->
+						
+			</div><!-- close .dashboard-container -->
+		</main>
+		
+		
+		</div><!-- close #sidebar-bg-->
+		<br>
+		<br>
+
+		<% include partials/scripta %>		
+		<script type="text/javascript">
+			var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+			(function(){
+			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+			s1.async=true;
+			s1.src='https://embed.tawk.to/5d2dddc8bfcb827ab0cc0f50/default';
+			s1.charset='UTF-8';
+			s1.setAttribute('crossorigin','*');
+			s0.parentNode.insertBefore(s1,s0);
+			})();
+			</script>
+		
+	</body>
+</html>
