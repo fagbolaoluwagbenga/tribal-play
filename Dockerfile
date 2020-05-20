@@ -2,7 +2,7 @@ FROM alpine:3.10
 
 WORKDIR /app
 
-COPY . /app
+COPY package*.json ./
 
 LABEL maintainer="holard"
 
